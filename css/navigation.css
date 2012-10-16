@@ -42,16 +42,7 @@
 	float: right;
 }
 
-#themes	li {
-	display: block;
-	float: left;
-	background-size: contain;
-	width: 44px;
-	height: 44px;
-	background-repeat: no-repeat;
-	border: 1px solid green;
-	margin: 10px;
-}
+
 #settings{	
 	display: block;
 	position: relative;
@@ -81,7 +72,7 @@
 	z-index: 3;
 	margin-left: -6px;
 	width: 68px;
-	margin-top: 23px;
+	margin-top: 23px;s
 }
 
 #themes {
@@ -94,6 +85,18 @@
 	margin-left: -137px;
 	margin-top: 23px;
 	background-color: lightYellow;
+}
+
+#themes	li {
+	display: block;
+	float: left;
+	background-size: contain;
+	width: 44px;
+	height: 44px;
+	background-repeat: no-repeat;
+	border: 1px solid green;
+	margin: 10px;
+	border-radius: 22px;
 }
 
 #themes-list {
