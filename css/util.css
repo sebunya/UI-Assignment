@@ -139,13 +139,13 @@
 
 
 
-#settings{
+#settings{	
 	display: block;
 	width: 72px;
 	height: 30px;
-	margin-top: 10px;
+	margin-top: 20px;
 	border-radius: 2px;
-	border: 1px solid rgba(0,0,0,0.1);
+	border: 1px solid #B3B3B3;
 	background-color: #F3F3F3;
 	margin-right: 45px;
 	float: right;
