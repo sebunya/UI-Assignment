@@ -1,0 +1,132 @@
+#search-logo, #search-button {
+	width: 70px;
+	height: 30px;
+}
+#search-logo {
+	display: block;	
+	background-image: url(../images/search_logo.png);
+	background-position: -7px -2px;
+}
+
+#search-button {
+	margin-top: 20px;
+	border-width: 1px;
+	border-color: #4D90FE;
+	border-radius: 0 10px 10px 0;
+	background-color: #4D90FE;
+	background-repeat: no-repeat;
+	margin-left: 0;
+	height: 29px;
+}
+
+#search-text {
+	position: relative;
+	border: 1px solid silver;
+	margin-top: 20px;
+	margin-left: 50px;
+	margin-bottom: 25px;
+	height: 27px;
+	float: left;
+	width: 20%;
+	border-radius: 10px 0px 0px 10px;
+	outline-color: greenYellow;
+}
+#search-text:focus{
+	width: 30%;
+}
+#search-text:visited{
+	width: 30%;
+}
+
+#navigation-menu {
+	float: right;
+}
+
+#navigation	li {
+	float:left;
+	margin-top: 20px;
+}
+
+
+#email-id {
+	margin: 3px 7px;
+	font-size: 13px;
+	color: #666;
+	max-width: 110px;
+	line-height: 27px;
+}
+
+#notification-button {
+	border-radius: 2px;
+	display: block;
+	height: 27px;
+	width: 27px;
+	color:#999;
+	font-weight: bold;
+	font-size: 14px;
+	background-color: #F1F1F1;
+	text-align: center;
+	line-height: 27px;
+	border: 1px solid #C6C6C6;
+	margin: 0px 8px;
+}
+
+#share-button {
+	border-radius: 2px;
+	float: left;
+	display: block;
+	height: 27px;
+	width: 73px;
+	border: 1px solid #C6C6C6;
+	background-position: -1px 1px;
+	margin: 0px 8px;
+	margin-right: 0px;
+	background-image: url(../images/share_button.png);
+}
+
+#share-triangle {
+	border-style: solid;
+	border-color: transparent transparent transparent #C6C6C6;
+	border-width: 7px 6px 7px;
+	display: inline-block;
+	margin-top: 7px;
+	margin-right: 3px;
+	line-height: 0;
+	height:0px;
+	width: 0px;
+}
+
+#profile-logo {	
+	border-radius: 2px;
+	float: left;
+	display: block;
+	width:27px;
+	height:27px;
+	background-image: url(../images/profile.png);
+}
+
+#profile-menu {
+	float: left;	
+	display: block;
+	height: 27px;
+	width: 10px;
+	margin-right: 35px;
+	background-image: url(../images/down_arrow.png);
+	background-size: 10px 15px;
+	background-repeat: no-repeat;
+	background-position: 1px 5px;
+}
+
+
+#profile-menu-triangle {
+	border-style: solid;
+	border-color: #6F6C6C transparent transparent transparent;
+	border-width: 4px 4px 0;
+	display: inline-block;
+	margin-top: 11px;
+	margin-right: 35px;
+	margin-left: 5px;
+	line-height: 0;
+	height:0px;
+	width: 0px;
+}

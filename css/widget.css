@@ -1,0 +1,98 @@
+.window,.title-bar,.window-buttons,.body {
+	display: block;
+}
+
+.window-buttons{
+	float: right;
+}
+.window {
+	border: 1px solid #DCDCDC;
+	min-width: 200px;
+	max-width: 100%;
+	min-height: 200px;
+	margin: 10px;
+}
+
+.title-bar:hover .window-settings,.title-bar:hover .window-minimize,.title-bar:hover .window-close{
+	display: block;
+}
+
+.title-bar {
+	display: block;
+	font-weight: bold;
+	padding-left: 7px;
+	line-height: 24px;
+	border: 1px solid #DCDCDC;
+	background: #F5F5F5;
+}
+
+.title{
+	max-height: 24px;
+	width: 50%;
+	overflow: hidden;
+	float: left;
+	min-width: 100px;
+}
+
+
+.window-minimize,.window-close {
+	vertical-align: middle;
+	text-align: center;
+	line-height: 12px;
+	font-size: 12px;
+	font-weight: normal;
+	margin: 4px 4px;
+	display: none;
+	float: left;
+	width: 13px;
+	height: 13px;
+	border: 1px solid #DEDEDE;
+}
+.body {
+	padding: 5px;
+	margin:10px;
+	height: 95%;
+	border: 0px dotted black;
+}
+
+.window-settings{
+	display: none;
+	position: relative;
+	float: left;
+}
+.window-settings a{
+	border: 1px solid #DEDEDE;
+	margin: 4px 4px 0;
+	background: url(../images/window_settings_logo.png);
+	background-repeat: no-repeat;
+	background-position: 7px 1px;
+	z-index: 2;
+	width: 35px;
+	height: 13px;
+	display:block;
+	position:relative;
+	background-color:#F5F5F5;
+}
+
+.window-settings-menu{
+	font-weight: normal;
+	padding: 10px;
+	border: 1px solid #DEDEDE;
+	background-color: white;
+	z-index: 1;
+	width: 150px;
+	display: none;
+	position:absolute;
+	right: 4px;
+	margin-top: -1px;
+}
+.window-settings:hover {
+	border-bottom: solid 1px transparent;
+}
+
+.window-settings:hover > a{
+	border-bottom: solid 0px white;
+}
+.window-settings:hover > ul.window-settings-menu{
+	display: block;
+}

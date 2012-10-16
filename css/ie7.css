@@ -1,0 +1,49 @@
+body{
+	overflow: auto;
+}
+#menulist li {
+	line-height: 27px;
+}
+#more-list-arrow {
+	background-position: 2px 8px;
+}
+#more-list{
+	margin-top: 5px;
+}
+#more-list:hover > ul {
+	margin: 25px -47px 0;
+}
+#search-text{
+	margin-bottom: 19px;
+}
+#navigation{
+	min-height: 71px;
+}
+
+#search-logo, #search-button{
+	float: left;
+}
+#navigation-menu {
+	float: right;
+}
+#settings-triangle {
+	margin-right: 5px;
+	margin-top: 5px;
+}
+#sidebar{
+	position: fixed;
+	left:0px;
+}
+.title-bar{
+	display: inline-block;
+}
+.window-minimize,.window-close {
+	line-height: normal;
+}
+
+#change-theme-tooltip, #gadgets-tooltip{
+	margin-top: 33px;
+	padding-top: 10px;
+	line-height: 25px;
+	min-height: 25px;
+}
