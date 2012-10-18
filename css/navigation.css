@@ -45,25 +45,33 @@
 
 #settings{	
 	display: block;
-	position: relative;
-	z-index: 2;
-	width: 72px;
-	height: 30px;
-	margin-top: 20px;
+	width: 80px;
+	height: 40px;
+	margin-top: 16px;
 	border-radius: 2px;
-	border: 1px solid #B3B3B3;
+	position: relative;
+	z-index: 3;
+	border: 0px solid #B3B3B3;
 	background-color: #F3F3F3;
-	margin-right: 45px;
+	margin-right: 50px;
 	float: right;
 }
 
 #settings-image{
 	float: left;
-	background-image: url(../images/settings_logo.png);
+	background-image: url(../images/theme_logo.png);
 	display: block;
-	height: 17px;
-	width: 17px;
-	margin-left: 15px;
+	height: 40px;
+	width: 80px;
+	margin-left: 0;
+	background-repeat: no-repeat;
+	background-size: 35px;
+	background-position: 24px 2px;
+	position: relative;
+	z-index: 5;
+	background-color: #F9FCD9;
+	border: 1px solid #AD9F9F;
+	border-radius: 5px;
 }
 
 #settings>a {
@@ -72,7 +80,7 @@
 	z-index: 3;
 	margin-left: -6px;
 	width: 68px;
-	margin-top: 23px;s
+	margin-top: 23px;
 }
 
 #themes {
@@ -82,9 +90,10 @@
 	min-width: 200px;
 	max-width: 250px;
 	border: 1px solid #AD9F9F;
-	margin-left: -137px;
-	margin-top: 23px;
+	margin-left: -120px;
+	margin-top: 40px;
 	background-color: lightYellow;
+	border-radius: 3px 0 3px 3px;
 }
 
 #themes	li {
@@ -104,8 +113,9 @@
 	position: relative;
 	z-index: 1;
 }
-#settings:hover >a {
-	border: 1px solid white;
+#settings:hover > #settings-image {
+	border-bottom-width: 0;
+	border-radius: 5px 5px 0px 0px;
 }
 #settings:hover #themes {
 	display: block;	

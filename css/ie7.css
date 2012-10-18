@@ -37,6 +37,10 @@ body{
 .title-bar{
 	display: inline-block;
 }
+.widget-icon {
+	width: 28px;
+	height: 28px;
+}
 .window-minimize,.window-close {
 	line-height: normal;
 }
@@ -46,4 +50,10 @@ body{
 	padding-top: 10px;
 	line-height: 25px;
 	min-height: 25px;
+}
+
+#themes {
+	position: relative;
+	margin-top: -2px;
+	padding-bottom: 10px;
 }
