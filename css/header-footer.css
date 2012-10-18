@@ -36,7 +36,8 @@
 	vertical-align: middle;
 	text-transform: capitalize;
 	z-index: 20;
-	margin-left: -220px;
+	margin-left: 0px;
+	min-width: 1220px;
 }
 
 
