@@ -6,7 +6,7 @@
 	float: right;
 }
 .window {
-	border: 1px solid #DCDCDC;
+	border: 2px solid transparent;
 	min-width: 280px;
 	max-width: 400px;
 	min-height: 220px;
@@ -22,6 +22,9 @@
 	box-shadow: 7px 7px 55px -16px black;
 }
 
+.window:hover {
+	border-color: #7CFF8C;
+}
 .title-bar:hover .window-settings,.title-bar:hover .window-minimize,.title-bar:hover .window-close{
 	display: block;
 }

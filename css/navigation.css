@@ -29,7 +29,8 @@
 	float: left;
 	width: 20%;
 	border-radius: 10px 0px 0px 10px;
-	outline-color: greenYellow;
+	outline-color: #0046FC;
+	outline-offset: -3px;
 }
 #search-text:focus{
 	width: 30%;
@@ -70,7 +71,7 @@
 	position: relative;
 	z-index: 5;
 	background-color: #B0F1F7;
-	border: 1px solid #AD9F9F;
+	border: 2px solid #00F5FF;
 	border-radius: 5px;
 }
 
@@ -89,7 +90,7 @@
 	z-index: 2;
 	min-width: 200px;
 	max-width: 250px;
-	border: 1px solid #AD9F9F;
+	border: 2px solid #7CFF8C;
 	margin-left: -120px;
 	margin-top: 40px;
 	background-color: #B0F1F7;
@@ -114,6 +115,8 @@
 	z-index: 1;
 }
 #settings:hover > #settings-image {
+	border-color: #7CFF8C;
+	border-width: 2px;
 	border-bottom-width: 0;
 	border-radius: 5px 5px 0px 0px;
 }
