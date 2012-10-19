@@ -2,7 +2,7 @@
 "http://www.w3.org/TR/xhtml1/DR/xhtml1-strict.dtd">
 
 <html>
-	<head>
+	<head>	
 		<link rel="stylesheet" type="text/css" href="css/cssreset-min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	    <link rel="stylesheet" type="text/css" href="css/base.css">
@@ -11,41 +11,39 @@
 		<link rel="stylesheet" type="text/css" href="css/navigation.css">
 	    <link rel="stylesheet" type="text/css" href="css/widget.css">
 	    <link rel="stylesheet" type="text/css" href="css/util.css">
+		
+		
 		<!--[if lt IE 8]>
-			<link href="ie7.css" rel="stylesheet" type="text/css" />
+			<link href="./css/ie7.css" rel="stylesheet" type="text/css" />
 		<![endif]-->
-
+		
 		<title>igoogle:Assignment</title>
 	</head>
-	<body>
-	<div id="container">
+	<body onload="scrollDown()">
 		<div id="header" class="clearfix">
 			<ul id="menulist">
-				<li><a href="https://plus.google.com/u/0/?tab=wX">+vishnu</a></li>
-				<li><a href="http://www.google.com/ig?hl=en&tab=ww&authuser=0">search</a></li>
-				<li><a href="http://www.google.com/imghp?hl=en&tab=wi&authuser=0">images</a></li>
-				<li><a href="http://maps.google.com/maps?hl=en&tab=wl&authuser=0">maps</a></li>
-				<li><a href="https://play.google.com/?hl=en&tab=w8">play</a></li>
-				<li><a href="http://www.youtube.com/?tab=wy&authuser=0">youTube</a></li>
+				<li><a href="https://plus.google.com/u/0/?tab=wX">UI</a></li>
+				<li><a href="http://www.google.com/ig?hl=en&tab=ww&authuser=0">HTML</a></li>
+				<li><a href="http://www.google.com/imghp?hl=en&tab=wi&authuser=0">CSS</a></li>
+				<li><a href="http://maps.google.com/maps?hl=en&tab=wl&authuser=0">JAVASCRIPT</a></li>
+				<li><a href="https://play.google.com/?hl=en&tab=w8">Layout</a></li>
+				<li><a href="http://www.youtube.com/?tab=wy&authuser=0">Browser Support</a></li>
 
 				<li id="more-list"><a href="">more<span id="more-list-arrow">></span></a>
 					<ul id="dropdown-menu">
-						<li><a href="http://www.google.com/ig?hl=en&tab=ww&authuser=0">search</a></li>
-						<li><a href="http://www.google.com/imghp?hl=en&tab=wi&authuser=0">images</a></li>
-						<li><a href="http://maps.google.com/maps?hl=en&tab=wl&authuser=0">maps</a></li>
-						<li><a href="https://play.google.com/?hl=en&tab=w8">play</a></li>
-						<li><a href="http://www.youtube.com/?tab=wy&authuser=0">youTube</a></li>
+						<li><a href="http://www.google.com/ig?hl=en&tab=ww&authuser=0">IE</a></li>
+						<li><a href="http://www.google.com/imghp?hl=en&tab=wi&authuser=0">CSS Reference</a></li>
+						<li><a href="http://maps.google.com/maps?hl=en&tab=wl&authuser=0">ThoughtWorks</a></li>
 					</ul>
 				</li>
 			</ul>
 
 		</div>
 		<div id="navigation" class="clearfix">
-			<h1 id="logo"><span></span>google</h1>
+			<h1 id="logo"><span>Creative Review	</span></h1>
 			<input type="text" id="search-text"></input>
 			<button id="search-button"><span id="search-logo"></span></button>
-			<button id="settings"><span id="settings-image"></span>
-				<a href="#"></a>
+			<a id="settings"><span id="settings-image"></span>
 				<div id="themes">	
 					<h1>Themes</h1>
 					<ul id="themes-list">
@@ -59,73 +57,19 @@
 						<li id="theme-8"></li>
 					</ul>
 				</div>
-			</button>
+			</a>
 		</div>
 
 		<div id="content" class="clearfix">
-			<div id="sidebar">
-				<span id="chat">chat</span>
-				<ul>
-					<li>gadgets</li>
-					<li>friends</li>
-				</ul>
-			</div>
 			<div id="columns" class="clearfix">
 				<div id="column1">
-					<div class="window">
-						<div class="title-bar clearfix">
-							<div class="title">Date and Time</div>
-							<div class="window-buttons">
-								<div class="window-settings">
-									<a href="#" class="settings-icon"></a>
-									<ul class="window-settings-menu">
-										<li>Delete this Gadget</li>
-										<li>Minimize this Gadget</li>
-										<li>Maximize this Gadget</li>
-										<li>Share this Gadget</li>
-									</ul>
-								</div>
-								<span class="window-minimize">-</span>
-								<span class="window-close">x</span>
-							</div>
-						</div>
-
-						<div class="body">
-							Hello
-						</div>
-
-					</div>
-					<div class="window">
-
-						<div class="title-bar clearfix">
-							<div class="title">Date and Time</div>
-							<div class="window-buttons">
-								<div class="window-settings">
-									<a href="#" class="settings-icon"></a>
-									<ul class="window-settings-menu">
-										<li>Delete this Gadget</li>
-										<li>Minimize this Gadget</li>
-										<li>Maximize this Gadget</li>
-										<li>Share this Gadget</li>
-									</ul>
-								</div>
-								<span class="window-minimize">-</span>
-								<span class="window-close">x</span>
-							</div>
-						</div>
-
-						<div class="body">
-							Hello
-						</div>
-
-					</div>
 					
 				</div>
 				<div id="column2">
 					<div class="window">
-
 						<div class="title-bar clearfix">
-							<div class="title">Date and Time</div>
+							<div class="widget-icon"></div>
+							<div class="title">Date and Time: This is the current date and the time</div>
 							<div class="window-buttons">
 								<div class="window-settings">
 									<a href="#" class="settings-icon"></a>
@@ -136,57 +80,8 @@
 										<li>Share this Gadget</li>
 									</ul>
 								</div>
-								<span class="window-minimize">-</span>
-								<span class="window-close">x</span>
-							</div>
-						</div>
-
-						<div class="body">
-							Hello
-						</div>
-
-					</div>
-<div class="window">
-
-						<div class="title-bar clearfix">
-							<div class="title">Date and Time</div>
-							<div class="window-buttons">
-								<div class="window-settings">
-									<a href="#" class="settings-icon"></a>
-									<ul class="window-settings-menu">
-										<li>Delete this Gadget</li>
-										<li>Minimize this Gadget</li>
-										<li>Maximize this Gadget</li>
-										<li>Share this Gadget</li>
-									</ul>
-								</div>
-								<span class="window-minimize">-</span>
-								<span class="window-close">x</span>
-							</div>
-						</div>
-
-						<div class="body">
-							Hello
-						</div>
-
-					</div>
-
-<div class="window">
-
-						<div class="title-bar clearfix">
-							<div class="title">Date and Time</div>
-							<div class="window-buttons">
-								<div class="window-settings">
-									<a href="#" class="settings-icon"></a>
-									<ul class="window-settings-menu">
-										<li>Delete this Gadget</li>
-										<li>Minimize this Gadget</li>
-										<li>Maximize this Gadget</li>
-										<li>Share this Gadget</li>
-									</ul>
-								</div>
-								<span class="window-minimize">-</span>
-								<span class="window-close">x</span>
+								<span class="window-minimize"></span>
+								<span class="window-close"></span>
 							</div>
 						</div>
 
@@ -196,80 +91,53 @@
 
 					</div>
 				</div>
-				<div id="column3">
-<div class="window">
-
-						<div class="title-bar clearfix">
-							<div class="title">Date and Time</div>
-							<div class="window-buttons">
-								<div class="window-settings">
-									<a href="#" class="settings-icon"></a>
-									<ul class="window-settings-menu">
-										<li>Delete this Gadget</li>
-										<li>Minimize this Gadget</li>
-										<li>Maximize this Gadget</li>
-										<li>Share this Gadget</li>
-									</ul>
-								</div>
-								<span class="window-minimize">-</span>
-								<span class="window-close">x</span>
-							</div>
-						</div>
-
-						<div class="body">
-							Hello
-						</div>
-
-					</div>
-					<div class="window">
-
-						<div class="title-bar clearfix">
-							<div class="title">Date and Time</div>
-							<div class="window-buttons">
-								<div class="window-settings">
-									<a href="#" class="settings-icon"></a>
-									<ul class	="window-settings-menu">
-										<li>Delete this Gadget</li>
-										<li>Minimize this Gadget</li>
-										<li>Maximize this Gadget</li>
-										<li>Share this Gadget</li>
-									</ul>
-								</div>
-								<span class="window-minimize">-</span>
-								<span class="window-close">x</span>
-							</div>
-						</div>
-
-						<div class="body">
-							Hello
-						</div>
-
-					</div>
-				</div>
-
+				<div id="column3"></div>	
 			</div>
-			
 		</div>
 		
 		<div id="footer" class="clearfix">
-			<span id="footer-home-link" ><a href="https://www.google.co.in/">classic home</a></span>
-			<div id="footer-central-links">
-				<span id="copy-right"> &copy2012 Google</span>
-				<span class="dash">-</span>
+		<span id="copy-right"> &copy2012 ThoughtWorks</span>	
+			<input type="checkbox" id="show-footer-links" onchange="scrollDown()">
+			<label for="show-footer-links" id="show-more" onclick="scrollDown()">Show More</label>
+			<label for="show-footer-links" id="show-less">Show Less</label>
+	
+			<div id="footer-central-links" class="clearfix">
 				
-				<ul id="footer-links	">
-					<li><a href="http://www.google.com/intl/en/ads/">advertising programs</a></li>
-					<span class="dash"><pre>-</pre></span>
-					<li><a href="http://www.google.com/services/">Business Solutions</a></li>
-					<span class="dash"><pre>-</pre></span>
-					<li><a href="http://www.google.com/intl/en/policies/">Privacy & Terms</a></li>
-					<span class="dash"><pre>-</pre></span>
-					<li><a href="http://support.google.com/websearch/?hl=en">help</a></li>
-					<span class="dash"><pre>-</pre></span>
-					<li><a href="http://www.google.com/intl/en/about/">about google</a></li>	
-				</ul>
+					<div id="about-ui">
+						<h1>About UI</h1>
+						<ul>
+							<li>HTML</li>
+							<li>CSS</li>
+							<li>JAVASCRIPT</li>
+						</ul>
+					</div>
+					
+					<div id="trainers">
+						<h1>Trainers</h1>
+						<ul>
+							<li>Abhinav</li>
+							<li>Mubarak</li>
+							<li>Vivek</li>
+						</ul>
+					</div>
+					
+					<div id="developers">
+						<h1>Developers</h1>
+						<ul>
+							<li>Vishnu</li>
+							<li>Shridhar</li>
+						</ul>
+					</div>
 			</div>
+			<div id="secondary-logo"></div>
 		</div>
-	</div>
 	</body>
+	<script type="text/javascript">
+			function scrollDown(){
+				console.log("checked");
+				var myDiv = document.getElementById('content');
+				console.log(myDiv.scrollHeight);
+				myDiv.scrollTop = myDiv.scrollTop + 50;
+			}
+	</script>
 </html>

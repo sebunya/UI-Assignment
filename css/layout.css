@@ -1,8 +1,6 @@
 #container {
 	height: 100%;
 	width: 100%;
-	font-size: 13px;
-	font-family: Arial, sans-serif;
 }
 
 #header {
@@ -20,29 +18,17 @@
 	clear: both;
 	position: relative;
 	vertical-align: middle;
-	background-color: #F1F1F1;
+	background-color:#04A4E2;
 }
 
 #content {
 	display: block;
-	margin-top: 10px;
+	margin-top: 20px;
 	width: 100%;
 	overflow: auto;
-	height: 600px;
+	height: 800px;
 }
 
-#sidebar{
-	z-index: 10;
-	position: absolute;
-	border: 1px solid #CCC;
-	margin-right: 18px;
-	margin-left: 38px;
-	min-width: 130px;
-	max-width: 170px;
-	width: 20%;
-	min-height: 348px;
-	float: left;
-}
 #sidebar li{
 	display: block;
 	width: 170px;
@@ -52,20 +38,19 @@
 }
 
 #columns {
-	margin-left: 220px;
-	min-width: 100px;
-	width: 80%;
+	width: 100%;
 	margin-bottom: 70px;
-}
+	padding: 0px 20px;}
 
 #column1, #column2, #column3 {
 	display: block;
-	float:left;
-	width:30%;
+	float: left;
 	min-height: 300px;
 	border-style: dotted;
 	border-width: 0px;
 	overflow: auto;
+	min-width: 300px;
+	width: 33%;
 }
 
 

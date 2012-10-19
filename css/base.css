@@ -5,6 +5,8 @@ body {
 	left:0;
 	background-color: white;
 	margin: 0;
-	padding: 0;
+	padding: 0;	font-size: 13px;
+	font-family: Arial, sans-serif;
+	background-image: Url(../images/background-image.jpeg);
 }
 
