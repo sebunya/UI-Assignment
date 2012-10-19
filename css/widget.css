@@ -103,10 +103,10 @@
 	display: none;
 	position: relative;
 	float: left;
+	margin: 8px 4px;
 }
+
 .window-settings a{
-	border: 0px solid #DEDEDE;
-	margin: 9px 4px 0;
 	background: url(../images/settings.png);
 	background-repeat: no-repeat;
 	background-size:contain;
@@ -118,19 +118,23 @@
 }
 .window-settings a:hover{
 	background-image: url(../images/settings1.png);
+	background-color: #E8FC03;
+	border-radius: 5px 5px 0px 0px;
 }
 .window-settings-menu{
 	font-weight: normal;
 	padding: 10px;
-	border: 1px solid #DEDEDE;
-	background-color: white;
+	border: 1px solid #E8FC03;
+	background-color: #A9FFD6;
 	z-index: 1;
 	width: 150px;
 	display: none;
 	position:absolute;
-	right: 4px;
-	margin-top: -1px;
+	right: 0px;
+	margin-top: 18px;
+	border-radius: 5px 0px 5px 5px;
 }
+
 .window-settings:hover {
 	border-bottom: solid 1px transparent;
 }
@@ -140,4 +144,12 @@
 }
 .window-settings:hover > ul.window-settings-menu{
 	display: block;
+}
+.window-settings-menu:hover + .settings-icon{
+	background-image: url(../images/settings1.png);
+	background-color: #E8FC03;
+	border-radius: 5px 5px 0px 0px;
+}
+.window-settings-menu li:hover{
+	background-color: #6BFF3C;
 }
