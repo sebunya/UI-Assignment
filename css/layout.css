@@ -29,14 +29,6 @@
 	height: 800px;
 }
 
-#sidebar li{
-	display: block;
-	width: 170px;
-	height: 27px;
-	padding: 2px;
-	margin-left: 5px;
-}
-
 #columns {
 	width: 100%;
 	margin-bottom: 70px;
@@ -52,5 +44,3 @@
 	min-width: 300px;
 	width: 33%;
 }
-
-
