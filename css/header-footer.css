@@ -145,12 +145,11 @@ label {
 
 #secondary-logo{	
 	display: none;
-	background: url(../images/front-end-dev.png);
-	height: 110px;
-	min-height: 100px;
+	background: url(../images/small_images.png);
+	background-position:	-100px -15px;
+	min-height: 98px;
 	width: 13%;
-	min-width: 125px;
-	background-size: contain;
+	min-width: 221px;
 	background-repeat: no-repeat;
 	float: right;
 	margin-right: 25px;

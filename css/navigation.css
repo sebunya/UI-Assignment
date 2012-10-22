@@ -4,8 +4,8 @@
 }
 #search-logo {
 	display: block;	
-	background-image: url(../images/search_logo.png);
-	background-position: -7px -2px;
+	background-image: url(../images/small_images.png);
+	background-position: -8px -100px;
 }
 
 #search-button {
@@ -60,14 +60,13 @@
 
 #settings-image{
 	float: left;
-	background-image: url(../images/theme_logo.png);
+	background-image: url(../images/small_images.png);
 	display: block;
 	height: 40px;
 	width: 80px;
 	margin-left: 0;
 	background-repeat: no-repeat;
-	background-size: 35px;
-	background-position: 24px 2px;
+	background-position: -65px -133px;
 	position: relative;
 	z-index: 5;
 	background-color: #B0F1F7;

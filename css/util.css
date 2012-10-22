@@ -4,9 +4,9 @@
 	font-size: 0px;
 	color: white;
 	display: inline-block;
-	background-image: url(../images/drop_down.png);
+	background-image: url(../images/small_images.png);
 	background-repeat: no-repeat;
-	background-position: 2px 9px;
+	background-position: -3px -50px;
 }
 
 #more-list:hover > ul {
@@ -102,7 +102,7 @@
 
 #gadget-image{
 	float: left;
-	background-image: url(../images/gadgets_logo.png);
+	background-image: url(../images/small_images.png);
 	display: block;
 	height: 14px;
 	width: 15px;
@@ -128,7 +128,7 @@
 
 #change-theme-image{
 	float: left;
-	background-image: url(../images/change_theme_logo.png);
+	background-image: url(../images/small_images.png);
 	display: inline-block;
 	height: 14px;
 	width: 15px;

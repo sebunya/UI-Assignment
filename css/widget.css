@@ -44,13 +44,13 @@
 
 .widget-icon {
 	display: block;
-	background: url(../images/date_time_logo.png);
+	background: url(../images/small_images.png);
 	width: 28px;
-	background-size: contain;
 	height: 28px;
 	background-repeat: no-repeat;
 	float: left;
 	margin: 5px 10px 5px 0;
+	background-position: -30px -138px;
 }
 
 .title{
@@ -79,18 +79,18 @@
 	border: 0px solid #DEDEDE;
 }
 .window-minimize{
-	background-size: contain;
-	background: url(../images/minimize.png);
+	background: url(../images/small_images.png);
+	background-position: -40px 192px;
 }
 .window-minimize:hover{
-	background-image:url(../images/minimize1.png);
+	background-position: -40px 171px;
 }
 .window-close{
 	background-size: contain;
-	background:url(../images/close.png);
+	background:url(../images/small_images.png);
 }
 .window-close:hover{
-	background-image:url(../images/close1.png);
+	background-position: -1px -26px;
 }
 .body {
 	padding: 5px;
@@ -107,9 +107,9 @@
 }
 
 .window-settings a{
-	background: url(../images/settings.png);
+	background: url(../images/small_images.png);
 	background-repeat: no-repeat;
-	background-size:contain;
+	background-position: -2px -129px;
 	z-index: 2;
 	width: 20px;
 	height: 20px;
@@ -117,7 +117,7 @@
 	position:relative;
 }
 .window-settings a:hover{
-	background-image: url(../images/settings1.png);
+	background-position: -3px -153px;
 	background-color: #E8FC03;
 	border-radius: 5px 5px 0px 0px;
 }
@@ -146,8 +146,8 @@
 	display: block;
 }
 .window-settings-menu:hover + .settings-icon{
-	background-image: url(../images/settings1.png);
-	background-color: #E8FC03;
+	background-color: #E8FC03;	
+	background-position: -3px -153px;
 	border-radius: 5px 5px 0px 0px;
 }
 .window-settings-menu li:hover{
