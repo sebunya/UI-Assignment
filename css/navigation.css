@@ -83,7 +83,7 @@
 	margin-top: 23px;
 }
 
-#themes {
+.themes {
 	display: none;
 	position: absolute;
 	z-index: 2;
@@ -96,7 +96,7 @@
 	border-radius: 3px 0 3px 3px;
 }
 
-#themes	li {
+.themes	li {
 	display: block;
 	float: left;
 	background-size: contain;
@@ -108,7 +108,7 @@
 	border-radius: 22px;
 }
 
-#themes-list {
+.themes >ul{
 	display: block;
 	position: relative;
 	z-index: 1;
@@ -119,36 +119,36 @@
 	border-bottom-width: 0;
 	border-radius: 5px 5px 0px 0px;
 }
-#settings:hover #themes {
+#settings:hover .themes {
 	display: block;	
 }
 
-#theme-1 {
+.theme-1 {
 	background: url(../images/themes/1.jpeg);
 }
-#theme-2 {
+.theme-2 {
 	background: url(../images/themes/2.jpeg);
 }
-#theme-3 {
+.theme-3 {
 	background: url(../images/themes/3.jpeg);
 }
-#theme-4 {
+.theme-4 {
 	background: url(../images/themes/4.jpeg);
 }
-#theme-5 {
+.theme-5 {
 	background: url(../images/themes/5.jpeg);
 }
-#theme-6 {
+.theme-6 {
 	background: url(../images/themes/6.jpeg);
 }
-#theme-7 {
+.theme-7 {
 	background: url(../images/themes/7.jpeg);
 }
-#theme-8 {
+.theme-8 {
 	background: url(../images/themes/8.jpeg);
 }
 
-#themes >h1 {
+.themes >h1 {
 	text-decoration: underline;
 	margin: 10px;
 	font-weight: bold;
