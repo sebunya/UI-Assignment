@@ -37,7 +37,7 @@
 
 
 
-#copy-right{
+.copy-right{
 	float: left;
 	display: block;
 	margin: 0px 35% 0px;
@@ -48,19 +48,19 @@
 	line-height: 14px;
 	font-style: oblique;
 }
-#footer-central-links {
+.footer-central-links {
 	margin: 10px 0 0 32%;
 	float: left;
 }
 
-#footer-central-links div{
+.footer-central-links div{
 	display: none;
 	float: left;
 	max-width: 150px;
 	margin: 0px 40px 0px;
 }
 
-#footer-central-links div >h1 {
+.footer-central-links div >h1 {
 	font-weight: bold;
 	font-size: 14px;
 	margin-top: 10px;
@@ -68,11 +68,11 @@
 	text-align: left;
 }
 
-#footer-central-links div ul {
+.footer-central-links div ul {
 	max-width: 150px;
 	display: block;
 }
-#footer-central-links div ul li{
+.footer-central-links div ul li{
 	text-align: left;
 	list-style: inside square;
 }
@@ -91,47 +91,27 @@ label {
 	margin-left: -30%;
 }
 
-#show-less{
+.show-less{
 	display: none;
 }
 
-#show-footer-links:checked  ~ #footer-central-links div {
+#show-footer-links:checked  ~ .footer-central-links div {
 	display: block;
 }
 
-#show-footer-links:checked  ~ #footer-central-links+div {
+#show-footer-links:checked  ~ .footer-central-links+div {
 	display: block;
 }
 
-#show-footer-links:checked  ~ #show-less{
+#show-footer-links:checked  ~ .show-less{
 	display: block;
 }
-#show-footer-links:checked  ~ #show-more{
+#show-footer-links:checked  ~ .show-more{
 	display: none;
 }
 
-#footer-links {
-	float: left;
-	background: white;
-	text-transform: capitalize;
-	color: #4C55CD;
-}
-
-	
-.dash {
-	float:left;
-	font-size: 10px;
-	vertical-align: middle;
-	text-align: center;
-	width: 10px;
-}
 
 
-
-#footer-home-link {
-	float: left;
-	padding-left: 2.5%;
-}
 
 #footer a:visited, #footer a:link {
 	text-decoration: none;
@@ -139,7 +119,7 @@ label {
 }
 
 
-#secondary-logo{	
+.secondary-logo{	
 	display: none;
 	background: url(../images/small_images.png);
 	background-position:	-100px -15px;
