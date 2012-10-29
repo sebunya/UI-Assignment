@@ -86,14 +86,12 @@
 .themes {
 	display: none;
 	position: absolute;
-	z-index: 2;
-	min-width: 200px;
-	max-width: 250px;
+	min-width: 198px;
 	border: 2px solid #7CFF8C;
-	margin-left: -120px;
+	border-radius: 10px 0 10px 10px;
+	z-index: 2;
+	margin-left: -118px;
 	margin-top: 40px;
-	background-color: #B0F1F7;
-	border-radius: 3px 0 3px 3px;
 }
 
 .themes	li {
@@ -112,6 +110,13 @@
 	display: block;
 	position: relative;
 	z-index: 1;
+	margin-left: 0;
+	margin-top: -20px;
+	background-color: #B0F1F7;
+	border-radius: 8px 0 3px 3px;
+	float: left;
+	padding-top: 25px;
+
 }
 #settings:hover > #settings-image {
 	border-color: #7CFF8C;
@@ -150,7 +155,11 @@
 
 .themes >h1 {
 	text-decoration: underline;
-	margin: 10px;
+	display: inline-block;
+	position: relative;
+	margin-bottom: -5px;
 	font-weight: bold;
 	font-size: 13px;
+	z-index: 2;
+	padding: 5px 10px;
 }
