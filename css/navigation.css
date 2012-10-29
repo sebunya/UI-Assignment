@@ -44,7 +44,7 @@
 }
 
 
-#settings{	
+.settings{	
 	display: block;
 	width: 80px;
 	height: 40px;
@@ -74,7 +74,7 @@
 	border-radius: 5px;
 }
 
-#settings>a {
+.settings>a {
 	display: block;
 	position: absolute;
 	z-index: 3;
@@ -118,13 +118,13 @@
 	padding-top: 25px;
 
 }
-#settings:hover > #settings-image {
+.settings:hover > #settings-image {
 	border-color: #7CFF8C;
 	border-width: 2px;
 	border-bottom-width: 0;
 	border-radius: 5px 5px 0px 0px;
 }
-#settings:hover .themes {
+.settings:hover .themes {
 	display: block;	
 }
 
