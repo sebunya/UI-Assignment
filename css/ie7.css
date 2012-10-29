@@ -1,16 +1,16 @@
 body{
 	overflow: auto;
 }
-#menulist li {
+.menulist li {
 	line-height: 27px;
 }
-#more-list-arrow {
+.more-list-arrow {
 	background-position: 2px 8px;
 }
-#more-list{
+.more-list{
 	margin-top: 5px;
 }
-#more-list:hover > ul {
+#header .menulist .more-list:hover  >ul{
 	margin: 25px -47px 0;
 }
 #search-text{
@@ -23,17 +23,6 @@ body{
 #search-logo, #search-button{
 	float: left;
 }
-#navigation-menu {
-	float: right;
-}
-#settings-triangle {
-	margin-right: 5px;
-	margin-top: 5px;
-}
-#sidebar{
-	position: fixed;
-	left:0px;
-}
 .title-bar{
 	display: inline-block;
 }
@@ -45,15 +34,11 @@ body{
 	line-height: normal;
 }
 
-#change-theme-tooltip, #gadgets-tooltip{
-	margin-top: 33px;
-	padding-top: 10px;
-	line-height: 25px;
-	min-height: 25px;
-}
-
-#themes {
+.themes {
 	position: relative;
-	margin-top: -2px;
+	margin-top: -4px;
 	padding-bottom: 10px;
+}
+.themes >ul {
+	border-radius: 0;
 }
