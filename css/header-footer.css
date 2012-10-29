@@ -1,20 +1,16 @@
-#menulist {
+.menulist {
 	font-weight: bold;
 	background-color: #2D2D2D;
 	padding-left:35px;
 	margin: 0;
 }
 
-#menulist a:visited, #menulist a:link {
+.menulist a:visited, .menulist a:link {
 	text-decoration: none;
 	color:#BBB;
 }
 
-#menulist a:hover {
-	color: #FFFFFF;
-}
-
-#menulist li {
+.menulist li {
 	color: #BBB;
 	line-height: 29px;
 	text-transform: capitalize;

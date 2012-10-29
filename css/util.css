@@ -9,23 +9,23 @@
 	background-position: -3px -50px;
 }
 
-#more-list:hover > ul {
-	margin: 0px;
-	padding-right: 10px;
-	color: black;
-	z-index: 999;
-	position: absolute;
+#header .menulist .more-list:hover  >ul {
 	display: block;
-	background-color: white;
-	width: 110px;
-	border: 1px solid #BEBEBE;
-	border-top: 0;
-	text-align: left;
 }
 
 #header ul ul {
 	color: black;
 	display: none;
+	margin: 0px;
+	padding-right: 10px;
+	color: black;
+	z-index: 999;
+	position: absolute;
+	background-color: white;
+	width: 110px;
+	border: 1px solid #BEBEBE;
+	border-top: 0;
+	text-align: left;
 }
 
 #header ul ul li {
