@@ -16,6 +16,7 @@ body{
 .search-text{
 	margin-bottom: 19px;
 	border-left: 0px;
+	line-height: 26px;
 }
 .nifty-left-round-corner {
 	width: 10px;
