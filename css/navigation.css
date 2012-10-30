@@ -24,7 +24,7 @@
 	position: relative;
 	border: 1px solid silver;
 	margin-top: 20px;
-	/*margin-left: 50px;*/
+	margin-left: 50px;
 	margin-bottom: 25px;
 	height: 27px;
 	float: left;
@@ -41,7 +41,8 @@
 }
 
 .nifty-left-round-corner{
-	margin-left: 50px;
+	display: none;
+	margin-right: -50px;
 	float: left;
 	width: 0px;
 	border: 0;
