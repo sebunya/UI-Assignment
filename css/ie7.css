@@ -17,8 +17,11 @@ body{
 	margin-bottom: 19px;
 	border-left: 0px;
 	line-height: 26px;
+	margin-left:0px
 }
 .nifty-left-round-corner {
+	display: block;
+	margin-left: 50px;
 	width: 10px;
 }
 #navigation{
