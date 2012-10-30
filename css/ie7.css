@@ -15,6 +15,7 @@ body{
 }
 .search-text{
 	margin-bottom: 19px;
+	border-left: 0px;
 }
 .nifty-left-round-corner {
 	width: 10px;
@@ -78,7 +79,7 @@ body{
 	position: absolute;
 	right: 50px;
 }
-
 .nifty-left-round-corner {
+	margin-right: 0px;
 	width: 10px;
 }
