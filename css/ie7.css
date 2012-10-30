@@ -42,3 +42,12 @@ body{
 .themes >ul {
 	border-radius: 0;
 }
+.H-shadow {
+	background: url(../images/gradients/shadow-vertical.png);
+	padding-bottom: 5px;
+	max-height: 230px;
+}
+.V-shadow {
+	background: url(../images/gradients/shadow-horizontal.png);
+	padding-right: 5px;
+}
