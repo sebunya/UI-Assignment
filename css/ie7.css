@@ -5,7 +5,7 @@ body{
 	line-height: 27px;
 }
 .more-list-arrow {
-	background-position: 2px 8px;
+	background-position: -3px -50px;
 }
 .more-list{
 	margin-top: 5px;
@@ -13,7 +13,7 @@ body{
 #header .menulist .more-list:hover  >ul{
 	margin: 25px -47px 0;
 }
-#search-text{
+.search-text{
 	margin-bottom: 19px;
 }
 .nifty-left-round-corner {
@@ -23,11 +23,24 @@ body{
 	min-height: 71px;
 }
 
-#search-logo, #search-button{
+.search-logo, .search-button{
 	float: left;
 }
 .title-bar{
 	display: inline-block;
+	background-image: url(../images/gradients/widget-title.png);
+	background-repeat: repeat-x;
+}
+.widget-menu {
+	margin-top: 8px;
+	margin-right: 0px;
+	margin-left: 0;
+	margin-bottom: 8px;
+}
+.window {
+	background-image: url(../images/gradients/widget-bottom.png);
+	background-repeat: repeat;
+	background-position: 0% 100%;
 }
 .widget-icon {
 	width: 28px;
@@ -48,9 +61,24 @@ body{
 .H-shadow {
 	background: url(../images/gradients/shadow-vertical.png);
 	padding-bottom: 5px;
-	max-height: 230px;
+	min-height: 210px;
+	background-position: 0px -13px;
 }
 .V-shadow {
 	background: url(../images/gradients/shadow-horizontal.png);
 	padding-right: 5px;
+	background-position: -23px 0px;
+}
+.window {
+	margin-top: -2px;
+	margin-left: -2px;
+}
+
+.settings {
+	position: absolute;
+	right: 50px;
+}
+
+.nifty-left-round-corner {
+	width: 10px;
 }
