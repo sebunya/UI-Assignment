@@ -35,8 +35,6 @@
 	min-width: 350px;
 }
 
-
-
 .copy-right{
 	float: left;
 	display: block;
@@ -115,7 +113,6 @@ label {
 	color:#4C55CD;
 }
 
-
 .secondary-logo{	
 	display: none;
 	background: url(../images/small_images.png);
@@ -129,4 +126,10 @@ label {
 	margin-bottom: 9px;
 	margin-top: 10px;
 
+}
+
+#footer > .more {
+	display: block;
+	width: 100%;
+	min-height: 20px;
 }

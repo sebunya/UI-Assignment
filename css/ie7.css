@@ -84,3 +84,16 @@ body{
 	margin-right: 0px;
 	width: 10px;
 }
+#footer > .more {
+	display: block;
+	width: 100%;
+	height: 20px;
+}
+
+#footer > .more:hover > .footer-central-links div{
+	display: block;
+}
+
+#footer > .more:hover  > .footer-central-links+div {
+	display: block;
+}

@@ -111,49 +111,44 @@
 		</div>
 		
 		<div id="footer" class="clearfix">
-		<span class="copy-right"> &copy2012 ThoughtWorks</span>	
-			<input type="checkbox" id="show-footer-links" onchange="scrollDown()">
-			<label for="show-footer-links" class="show-more" onclick="scrollDown()">Show More</label>
-			<label for="show-footer-links" class="show-less">Show Less</label>
-	
-			<div class="footer-central-links clearfix">
-				
-					<div class="about-ui">
-						<h1>About UI</h1>
-						<ul>
-							<li>HTML</li>
-							<li>CSS</li>
-							<li>JAVASCRIPT</li>
-						</ul>
-					</div>
+			<a href="#" class = "more">
+				<span class="copy-right"> &copy2012 ThoughtWorks</span>	
+				<input type="checkbox" id="show-footer-links">
+				<label for="show-footer-links" class="show-more">More</label>
+				<label for="show-footer-links" class="show-less">Less</label>
+		
+				<div class="footer-central-links clearfix">
 					
-					<div class="trainers">
-						<h1>Trainers</h1>
-						<ul>
-							<li>Abhinav</li>
-							<li>Mubarak</li>
-							<li>Vivek</li>
-							<li>Rahul</li>
-						</ul>
-					</div>
-					
-					<div class="developers">
-						<h1>Developers</h1>
-						<ul>
-							<li>Vishnu</li>
-							<li>Shridhar</li>
-						</ul>
-					</div>
-			</div>
-			<div class="secondary-logo"></div>
+						<div class="about-ui">
+							<h1>About UI</h1>
+							<ul>
+								<li>HTML</li>
+								<li>CSS</li>
+								<li>JAVASCRIPT</li>
+							</ul>
+						</div>
+						
+						<div class="trainers">
+							<h1>Trainers</h1>
+							<ul>
+								<li>Abhinav</li>
+								<li>Mubarak</li>
+								<li>Vivek</li>
+								<li>Rahul</li>
+							</ul>
+						</div>
+						
+						<div class="developers">
+							<h1>Developers</h1>
+							<ul>
+								<li>Vishnu</li>
+								<li>Shridhar</li>
+							</ul>
+						</div>
+				</div>
+				<div class="secondary-logo"></div>
+			</a>
 		</div>
 	</body>
-	<script type="text/javascript">
-			function scrollDown(){
-				console.log("checked");
-				var myDiv = document.getElementById('content');
-				console.log(myDiv.scrollHeight);
-				myDiv.scrollTop = myDiv.scrollTop + 50;
-			}
-	</script>
+
 </html>
