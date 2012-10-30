@@ -1,14 +1,14 @@
-#search-logo, #search-button {
+.search-logo, .search-button {
 	width: 70px;
 	height: 30px;
 }
-#search-logo {
+.search-logo {
 	display: block;	
 	background-image: url(../images/small_images.png);
 	background-position: -8px -100px;
 }
 
-#search-button {
+.search-button {
 	margin-top: 20px;
 	border-width: 1px;
 	border-color: #4D90FE;
@@ -19,7 +19,7 @@
 	height: 29px;
 }
 
-#search-text {
+.search-text {
 	position: relative;
 	border: 1px solid silver;
 	margin-top: 20px;
@@ -32,17 +32,12 @@
 	outline-color: #0046FC;
 	outline-offset: -3px;
 }
-#search-text:focus{
+.search-text:focus{
 	width: 30%;
 }
-#search-text:visited{
+.search-text:visited{
 	width: 30%;
 }
-
-#navigation-menu {
-	float: right;
-}
-
 
 .settings{	
 	display: block;
@@ -58,7 +53,7 @@
 	float: right;
 }
 
-#settings-image{
+.settings-image{
 	float: left;
 	background-image: url(../images/small_images.png);
 	display: block;
@@ -118,7 +113,7 @@
 	padding-top: 25px;
 
 }
-.settings:hover > #settings-image {
+.settings:hover > .settings-image {
 	border-color: #7CFF8C;
 	border-width: 2px;
 	border-bottom-width: 0;

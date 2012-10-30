@@ -32,9 +32,10 @@
 #columns {
 	width: 100%;
 	margin-bottom: 70px;
-	padding: 0px 20px;}
+	padding: 0px 20px;
+}
 
-#column1, #column2, #column3 {
+.column {
 	display: block;
 	float: left;
 	min-height: 10px;
