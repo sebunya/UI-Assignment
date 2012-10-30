@@ -13,20 +13,26 @@ body{
 #header .menulist .more-list:hover  >ul{
 	margin: 25px -47px 0;
 }
-#search-text{
+.search-text{
 	margin-bottom: 19px;
 }
 #navigation{
 	min-height: 71px;
 }
 
-#search-logo, #search-button{
+.search-logo, .search-button{
 	float: left;
 }
 .title-bar{
 	display: inline-block;
 	background-image: url(../images/gradients/widget-title.png);
 	background-repeat: repeat-x;
+}
+.widget-menu {
+	margin-top: 8px;
+	margin-right: 0px;
+	margin-left: 0;
+	margin-bottom: 8px;
 }
 .window {
 	background-image: url(../images/gradients/widget-bottom.png);

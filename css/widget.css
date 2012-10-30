@@ -112,6 +112,7 @@
 }
 
 .widget-menu {
+	margin: 8px 4px;
 	background: url(../images/small_images.png);
 	background-repeat: no-repeat;
 	background-position: -2px -129px;
@@ -121,7 +122,6 @@
 	display:none;
 	position:relative;
 	float: left;
-	margin: 8px 4px;
 }
 .widget-menu:hover {
 	background-position: -3px -153px;
