@@ -19,11 +19,12 @@
 	height: 29px;
 }
 
-.search-text {
+
+.search-text, .nifty-left-round-corner {
 	position: relative;
 	border: 1px solid silver;
 	margin-top: 20px;
-	margin-left: 50px;
+	/*margin-left: 50px;*/
 	margin-bottom: 25px;
 	height: 27px;
 	float: left;
@@ -38,6 +39,60 @@
 .search-text:visited{
 	width: 30%;
 }
+
+.nifty-left-round-corner{
+	margin-left: 50px;
+	float: left;
+	width: 0px;
+	border: 0;
+	margin-top: 21px;
+}
+.corner {
+	margin: auto 0px;
+	position: relative;
+	float: right;
+	width: 1px;
+	background-color: white;
+}
+
+.radius-1{
+	height: 26px;
+	margin-top: 0px;
+}
+.radius-2{
+	height:27px;
+	margin-top: 0px;
+}
+.radius-3, .radius-4{
+	height:25px;
+	margin-top: 1px;
+}
+.radius-5{
+	height:24px;
+	margin-top: 1px;
+}
+.radius-6{
+	height:23px;
+	margin-top: 2px;
+}
+.radius-7{
+	height:21px;
+	margin-top: 3px;
+}
+.radius-8{
+	height:17px;
+	margin-top: 5px;
+}
+.radius-9{
+	height:16px;
+	margin-top: 5px;
+}
+.radius-10{
+	height:11px;
+	margin-top: 8px;
+}
+
+
 
 .settings{	
 	display: block;

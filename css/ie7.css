@@ -16,6 +16,9 @@ body{
 #search-text{
 	margin-bottom: 19px;
 }
+.nifty-left-round-corner {
+	width: 10px;
+}
 #navigation{
 	min-height: 71px;
 }
