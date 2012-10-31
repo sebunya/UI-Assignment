@@ -155,10 +155,7 @@
 }
 
 .H-shadow{
-	max-width: 400px;
+	padding-right: 20px;
+	max-width: 420px;
 	min-height: 250px;
-	background-repeat: repeat-x;
-}
-.V-shadow {
-	background-repeat: repeat-y;
 }
