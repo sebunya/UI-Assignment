@@ -24,19 +24,43 @@
 	overflow: auto;
 }
 
+#content >div.sidebar {
+	float: left;
+	border: 1px solid red;
+	width: 10%;
+	height: 100px;
+	min-width: 100px;
+}
+#content >div.sidebar >button {
+	background: #69C9FF;
+	padding: 5px;
+	position: relative;
+	z-index: 1;
+	margin: 15px 30px 0 10px;
+	font-size: 9px;
+	font-weight: bolder;
+}
+#content >div.sidebar >button>span.add-gadgets-icon{
+	background: url(../images/buttons/add-gadgets.png);
+	width: 36px;
+	height: 36px;
+	z-index: 2;
+	position: absolute;
+	margin-top: -18px;
+}
 #columns {
 	margin-bottom: 70px;
 	padding: 0px;
-	padding-left: 10px;
+	float: left;
+	width: 89%;
+	padding-left: 0;
 }
 
 .column {
-	display: block;
 	float: left;
 	min-height: 10px;
-	border-style: dotted;
-	border-width: 0px;
 	overflow: auto;
 	min-width: 300px;
-	width: 33.33%;
+	width: 33%;
+	border: 1px solid black;
 }
