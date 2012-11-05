@@ -25,7 +25,8 @@
 }
 .title-bar:hover .widget-menu,
 .title-bar:hover .window-minimize,
-.title-bar:hover .window-close{
+.title-bar:hover .window-close,
+.title-bar:hover .window-maximize{
 	display: block;
 }
 
@@ -72,7 +73,7 @@
 }
 
 
-.window-minimize,.window-close {
+.window-minimize,.window-close,.window-maximize {
 	vertical-align: middle;
 	text-align: center;
 	line-height: 12px;
@@ -88,6 +89,10 @@
 .window-minimize{
 	background: url(../images/small_images.png);
 	background-position: -40px 192px;
+}
+.window-maximize{
+	display: none;
+	background-color: green;
 }
 .window-minimize:hover{
 	background-position: -40px 171px;
