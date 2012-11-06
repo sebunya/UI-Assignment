@@ -1,11 +1,14 @@
 var widget = {
 	columnNumber: 0,
 	createElement: function(){
-		var parent = arguments[0],
-			tagName = arguments[1],
-			element = document.createElement(tagName);
-		for(var i=2, len=arguments.length; i<len;i=i+2){
-			element.setAttribute(arguments[i],arguments[i+1]);
+		var parameters = arguments[0];
+		var parent = parameters['parent'],
+			tagName = parameters['tagName'],
+			element = document.createElement(tagName),
+			attributes = parameters['attributes'];
+		for(var thisAttribute in attributes){
+			var attribute = (thisAttribute=="className")?"class":thisAttribute;
+			element.setAttribute(attribute,attributes[thisAttribute]);
 		}
 		parent.appendChild(element);
 		return element;
@@ -42,41 +45,38 @@ var widget = {
 		// console.log("in createNewWidget");
 		var thisWidget = {};
 		thisWidget.parent = parent;
-		thisWidget.hShadow = widget.createElement(parent,"div","class","H-shadow"),
-		thisWidget.vShadow = widget.createElement(thisWidget.hShadow,"div","class","V-shadow"), 
-		thisWidget.contentWindow = widget.createElement(thisWidget.vShadow,"div","class","window"),
-		thisWidget.titleBar = widget.createElement(thisWidget.contentWindow,"div","class","title-bar clearfix"),
-		thisWidget.anchor = widget.createElement(thisWidget.titleBar,"a","href","#"),
-		thisWidget.widgetIcon = widget.createElement(thisWidget.titleBar,"div","class","widget-icon"),
-		thisWidget.title = widget.createElement(thisWidget.titleBar,"div","class","title"),
-		thisWidget.windowButtons = widget.createElement(thisWidget.titleBar,"div","class","window-buttons"),
-		thisWidget.widgetMenu = widget.createElement(thisWidget.windowButtons,"a","class","widget-menu","href","#"),
-		thisWidget.windowSettings = widget.createElement(thisWidget.widgetMenu,"div","class","window-settings"),
-		thisWidget.windowSettingsMenu = widget.createElement(thisWidget.windowSettings,"ul","class","window-settings-menu"),
-		thisWidget.minimizeButton = widget.createElement(thisWidget.windowButtons,"span", "class","window-minimize"),
-		thisWidget.closeButton = widget.createElement(thisWidget.windowButtons,"span", "class","window-close"),
-		thisWidget.body = widget.createElement(thisWidget.contentWindow,"div","class","body")
-		widget.attachEventHandlers(thisWidget);
-		widget.addMenuItems(thisWidget.windowSettingsMenu,"Delete this Gadget","Minimize this Gadget","Maximize this Gadget");
+		thisWidget.hShadow = this.createElement({'parent':parent,'tagName':"div",attributes:{"className":"H-shadow"}});
+		thisWidget.vShadow = this.createElement({'parent':thisWidget.hShadow,'tagName':"div",attributes:{"className":"V-shadow"}});
+		thisWidget.contentWindow = this.createElement({'parent':thisWidget.vShadow,'tagName':"div",attributes:{"className":"window"}});
+		thisWidget.titleBar = this.createElement({'parent':thisWidget.contentWindow,'tagName':"div",attributes:{"className":"title-bar clearfix"}});
+		thisWidget.anchor = this.createElement({'parent':thisWidget.titleBar,'tagName':"a",attributes:{"href":"#"}});
+		thisWidget.widgetIcon = this.createElement({'parent':thisWidget.titleBar,'tagName':"div",attributes:{"className":"widget-icon"}});
+		thisWidget.title = this.createElement({'parent':thisWidget.titleBar,'tagName':"div",attributes:{"className":"title"}});
+		thisWidget.windowButtons = this.createElement({'parent':thisWidget.titleBar,'tagName':"div",attributes:{"className":"window-buttons"}});
+		thisWidget.widgetMenu = this.createElement({'parent':thisWidget.windowButtons,'tagName':"a",attributes:{"className":"widget-menu","href":"#"}});
+		thisWidget.windowSettings = this.createElement({'parent':thisWidget.widgetMenu,'tagName':"div",attributes:{"className":"window-settings"}});
+		thisWidget.windowSettingsMenu = this.createElement({'parent':thisWidget.windowSettings,'tagName':"ul",attributes:{"className":"window-settings-menu"}});
+		thisWidget.minimizeButton = this.createElement({'parent':thisWidget.windowButtons,'tagName':"span",attributes: {"className":"window-minimize"}});
+		thisWidget.closeButton = this.createElement({'parent':thisWidget.windowButtons,'tagName':"span", attributes:{"className":"window-close"}});
+		thisWidget.body = this.createElement({'parent':thisWidget.contentWindow,'tagName':"div",attributes:{"className":"body"}});
+		this.attachEventHandlers(thisWidget);
+		this.addMenuItems(thisWidget.windowSettingsMenu,"Delete this Gadget","Minimize this Gadget","Maximize this Gadget");
 		thisWidget.title.innerHTML = "TITLE" + columnNo;
 		thisWidget.body.innerHTML = "Hello Vishnu";
 
 	},
 	addNewWidget: function(){
-		// console.log("in addNewWidget");
 		widget.columnNumber=(widget.columnNumber+1)%4;
 		if(widget.columnNumber==0){ widget.columnNumber=1;}
 		var column = document.getElementById("column"+widget.columnNumber);
 		widget.createNewWidget(column, widget.columnNumber);
 		
 	},
-
-	// Doubtful if this way is correct
-	init: function(){
-		// console.log("in init");
-		var addGadget = document.getElementById("addGadget");
-		addGadget.onclick = this.addNewWidget;
-	}
 };
-window.onload = widget.init();
+window.onload = function(){
+	addGadget = document.getElementById("addGadget");
+	addGadget.onclick = function(){
+		widget.addNewWidget.call(widget);
+	};
+};
 

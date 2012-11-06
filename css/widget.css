@@ -90,12 +90,15 @@
 	background: url(../images/small_images.png);
 	background-position: -40px 192px;
 }
-.window-maximize{
-	display: none;
-	background-color: green;
-}
 .window-minimize:hover{
 	background-position: -40px 171px;
+}
+.window-maximize{
+	background: url(../images/small_images.png);
+	background-position: -6px 65px;
+}
+.window-maximize:hover{
+	background-position: -31px 65px;
 }
 .window-close{
 	background-size: contain;
