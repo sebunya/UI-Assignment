@@ -27,7 +27,7 @@ Widget.prototype.minimize = function() {
 		WidgetBody =getElementsByClassName(this.widget.widgetDiv, 'body')[0];
 	WidgetBody.style.display = "None";
 	contentWindow.style.minHeight = "40px";
-	minimizeButton.setAttribute('class','window-maximize');
+	minimizeButton.className = 'window-maximize';	
 };
 
 Widget.prototype.maximize = function() {
@@ -36,7 +36,7 @@ Widget.prototype.maximize = function() {
 		WidgetBody =getElementsByClassName(this.widget.widgetDiv, 'body')[0];
 	WidgetBody.style.display = "block";
 	contentWindow.style.minHeight = "220px";
-	minimizeButton.setAttribute('class','window-minimize');
+	minimizeButton.className = 'window-minimize';
 };
 Widget.prototype.attachEventHandlers = function(){
 	var widgetDiv = this.widget.widgetDiv,
@@ -44,13 +44,12 @@ Widget.prototype.attachEventHandlers = function(){
 		closeButton = getElementsByClassName(widgetDiv,'window-close')[0],
 		me = this;
 	minimizeButton.onclick = function(){
-		var currentClass = minimizeButton.getAttribute('class');
-		if(currentClass == 'window-minimize')	
+		if(this.className == 'window-minimize')	
 		{	
 			me.minimize();
 			return false;
 		}
-		me.maximize();
+ 		me.maximize();
 		return false;
 	};
 	closeButton.onclick = function(){
@@ -82,7 +81,7 @@ Widget.prototype.createNewWidget = function(parentElement,columnNumber) {
 			body:'Hello World'
 		});
 
-	widgetDiv.setAttribute('class','H-shadow');
+	widgetDiv.className='H-shadow';
 	widgetDiv.innerHTML = thisWidget
 	this.parent.appendChild(widgetDiv);
 	this.widget.widgetDiv = widgetDiv;
@@ -90,7 +89,7 @@ Widget.prototype.createNewWidget = function(parentElement,columnNumber) {
 };
 
 window.onload = function(){
-	addGadget = document.getElementById("addGadget");
+	var addGadget = document.getElementById("addGadget");
 	this.widgets = [];
 	var me = this;
 	addGadget.onclick = function(){
