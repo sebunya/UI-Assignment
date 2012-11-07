@@ -25,19 +25,46 @@ var Template = function(){
 								"{{body}}"+
 							"</div>"+
 						"</div>"+
-					"</div>"
+					"</div>",
+			overlayTemplate: "<div class = {{WidgetOverlayClass}}>"+
+								"<div class={{WidgetFormClass}}>"+
+									"<div class={{WidgetInputClass}}>"+
+										"<span class={{LabelClass}}>Title:</span>"+
+										"<input class={{TitleInputClass}} type='text'></input>"+
+									"</div>"+
+									"<div class={{WidgetInputClass}}>"+
+										"<span class = {{LabelClass}}>Body:</span>"+
+										"<textarea class={{BodyInputClass}}></textarea>"+
+									"</div>"+
+									"<div class={{WidgetInputClass}}>"+
+										"<span class={{LabelClass}}>Column</span>"+
+										"<select class={{OptionsClass}}>"+
+										  "<option>column1</option>"+
+										  "<option>column2</option>"+
+										  "<option>column3</option>"+
+										"</select>"+
+									"</div>"+
+									"<div class={{WidgetInputClass}}>"+
+										"<button class={{SubmitClass}}><span>OK</span></button>"+
+									"</div>"+
+								"</div>"+
+							"</div>"+
+							"<div class={{OverlayBackgroundClass}}></div>"
 		};
 	return {
 		render: function(template,data){
 			var regExp;
 			for(var temp in data){
-				regExp = new RegExp("[{][{]" + temp + "[}][}]");
+				regExp = new RegExp("[{][{]" + temp + "[}][}]",'g');
 				template = template.replace(regExp,"'"+ data[temp] +"'");
 			}
 			return template;
 		},	
 		getWidgetTemplate: function(){
 			return templates.widget;
+		},
+		getOverlayTemplate: function(){
+			return templates.overlayTemplate;
 		}
 	};
 };
