@@ -10,7 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="css/navigation.css">
 	    <link rel="stylesheet" type="text/css" href="css/widget.css">
 	    <link rel="stylesheet" type="text/css" href="css/util.css">
-		
+	    <link rel="stylesheet" type="text/css" href="css/overlay.css">		
 		
 		<!--[if lt IE 8]>
 			<link href="./css/ie7.css" rel="stylesheet" type="text/css" />
@@ -126,6 +126,31 @@
 				<div class="secondary-logo"></div>
 			</a>
 		</div>
+		<div class = "widget-overlay">
+				<div class="widget-form">
+					<div class="widget-input">
+						<span class="label">Title:</span>
+						<input class="title-input" type="text"></input>
+					</div>
+					<div class="widget-input">
+						<span class = "label">Body:</span>
+						<textarea class="body-input"></textarea>
+					</div>
+					<div class="widget-input">
+						<span class="label">Column</span>
+						<select>
+						  <option>column1</option>
+						  <option>column2</option>
+						  <option>column3</option>
+						</select>
+					</div>
+					<div class="widget-input">
+						<button class="submit"><span>OK</span></button>
+					</div>
+				</div>
+		</div>
+		<div class="overlay-background"></div>
+		
 	</body>
 	<script type = "text/javascript" src="./js/templates.js"></script>
 	<script type = "text/javascript" src="./js/util.js"></script>
