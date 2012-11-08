@@ -19,9 +19,15 @@
 	z-index: 21;
 	top: 35%;
 	opacity: 1;
+	border: 3px solid #05F722;
+	border-radius: 10px;
+}
+.overlay-title{
+	text-align: center;
+	font-size: 20px;
 }
 .widget-form {
-	margin: 12% 15% 0;
+	margin: 25px 15% 0;
 }
 .widget-input{
 	margin-top: 20px;
@@ -30,9 +36,10 @@
 	margin-top: 10px;
 	margin-right: 9px;
 }
+.widget-overlay button{
+	margin-right: 20px;
+	width: 50px;
+}
 .widget-overlay > input, textarea, select {
 	vertical-align: middle;
-}
-.submit{
-	width: 50px;
 }

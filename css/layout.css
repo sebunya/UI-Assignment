@@ -10,7 +10,7 @@
 
 #navigation {
 	z-index: 10;
-	min-width: 600px;;
+	min-width: 460px;;
 	clear: both;
 	position: relative;
 	vertical-align: middle;
@@ -26,10 +26,10 @@
 
 #content >div.sidebar {
 	float: left;
-	border: 1px solid red;
-	width: 10%;
+	border: 0px solid red;
+	width: 15%;
 	height: 100px;
-	min-width: 100px;
+	min-width: 120px;
 }
 #content >div.sidebar >button {
 	background: #69C9FF;
@@ -39,6 +39,7 @@
 	margin: 15px 30px 0px 10px;
 	font-size: 9px;
 	font-weight: bolder;
+	min-width: 85px;
 }
 #content >div.sidebar >button>span.add-gadgets-icon{
 	background: url(../images/buttons/add-gadgets.png);
@@ -53,8 +54,8 @@
 	margin-bottom: 70px;
 	padding: 0px;
 	float: left;
-	width: 89%;
-	padding-left: 0;
+	width: 80%;
+	padding-left: 1%;
 }
 
 .column {
@@ -63,5 +64,5 @@
 	overflow: auto;
 	min-width: 300px;
 	width: 33%;
-	border: 1px solid black;
+	border: 0px solid black;
 }

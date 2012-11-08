@@ -28,6 +28,9 @@ var Template = function(){
 					"</div>",
 			overlayTemplate: "<div class = {{WidgetOverlayClass}}>"+
 								"<div class={{WidgetFormClass}}>"+
+									"<div class={{OverlayTitleClass}}>"+
+										"<span>{{OverlayTitle}}</span>"+
+									"</div>"+
 									"<div class={{WidgetInputClass}}>"+
 										"<span class={{LabelClass}}>Title:</span>"+
 										"<input class={{TitleInputClass}} type='text'></input>"+
@@ -45,6 +48,7 @@ var Template = function(){
 										"</select>"+
 									"</div>"+
 									"<div class={{WidgetInputClass}}>"+
+										"<button class={{CancelClass}}><span>Cancel</span></button>"+
 										"<button class={{SubmitClass}}><span>OK</span></button>"+
 									"</div>"+
 								"</div>"+

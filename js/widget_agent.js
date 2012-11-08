@@ -3,7 +3,11 @@ var WidgetAgent = function(){
 		thisOverlay,
 		data = {};
 	var attachEventHandlers = function(){
-		var submitButton = getElementsByClassName(thisOverlay,'submit')[0];
+		var submitButton = getElementsByClassName(thisOverlay,'submit')[0],
+			cancelButton = getElementsByClassName(thisOverlay,'cancel')[0];
+		cancelButton.onclick = function(){
+			document.body.removeChild(thisOverlay);
+		};
 		submitButton.onclick = function(){
 			data.title = getElementsByClassName(thisOverlay,'title-input')[0].value;
 			data.body = getElementsByClassName(thisOverlay,'body-input')[0].value;
@@ -11,7 +15,7 @@ var WidgetAgent = function(){
 			data.columnElement = columns.options[columns.selectedIndex].text;
 			currentWidget = new Widget(data);
 			document.body.removeChild(thisOverlay);
-		}
+		};
 	},
 	renderOverlay = function(){
 		var templates = new Template(),
@@ -20,12 +24,15 @@ var WidgetAgent = function(){
 			overlayHTML = templates.render(overlayTemplate,{
 				WidgetOverlayClass: 'widget-overlay',
 				WidgetFormClass: 'widget-form',
+				OverlayTitleClass: 'overlay-title',
+				OverlayTitle: 'New Widget',
 				WidgetInputClass: 'widget-input',
 				LabelClass: 'label',
 				OptionsClass: 'options',
 				TitleInputClass: 'title-input',
 				BodyInputClass: 'body-input',
 				SubmitClass: 'submit',
+				CancelClass: 'cancel',
 				OverlayBackgroundClass: 'overlay-background'
 			});
 		overlayDiv.className = 'overlay';
