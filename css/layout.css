@@ -1,7 +1,7 @@
 
 #header {
 	z-index: 10;
-	background-color: #338199;
+	background-color: #061853;
 	padding: 0px;
 	border-width:0px;	
 	text-align: center;	
@@ -14,7 +14,7 @@
 	clear: both;
 	position: relative;
 	vertical-align: middle;
-	background-color: rgba(124, 175, 182, 0.41);
+	background-color: #A0D4EC;
 }
 
 #content {

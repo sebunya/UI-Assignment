@@ -1,13 +1,12 @@
-html{
+html,body{
 	/*background-image: Url(../images/background-image.jpeg);*/
-	background-color: #B0ECFF;
+	background-color: white;
 }
 body {
 	top:0;
 	left:0;
 	right:0;
 	left:0;
-	background-color: #B0ECFF;
 	margin: 0;
 	padding: 0;
 	font-size: 13px;
