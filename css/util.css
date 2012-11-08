@@ -14,26 +14,24 @@
 }
 
 #header ul ul {
-	color: black;
 	display: none;
-	margin: 0px;
-	padding-right: 10px;
-	color: black;
+	margin: 0 4px 0;
+	padding-right: 0px;
 	z-index: 999;
 	position: absolute;
 	background-color: white;
-	width: 110px;
-	border: 1px solid #BEBEBE;
+	border: 2px solid #00AEC5;
 	border-top: 0;
 	text-align: left;
 }
 
 #header ul ul li {
 	clear: both;
-	width: 94%
+	width: 115px;
+	line-height: 33px;
 }
 #header ul ul li:hover{
-	background: lightblue;
+	background: #00A3FF;
 }
 
 #header ul ul a:visited, #header ul ul a:link {
@@ -54,7 +52,7 @@
 	font-weight: bolder;
 	text-align: center;
 	vertical-align: middle;
-	color: #1C2583;
+	color: black;
 }
 
 

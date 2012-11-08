@@ -103,7 +103,7 @@
 	position: relative;
 	z-index: 3;
 	border: 0px solid #B3B3B3;
-	background-color: #B0F1F7;
+	background-color: #6EFFF9;
 	margin-right: 2%;
 	float: right;
 }
@@ -119,8 +119,8 @@
 	background-position: -65px -133px;
 	position: relative;
 	z-index: 5;
-	background-color: #B0F1F7;
-	border: 2px solid #00F5FF;
+	background-color: #6EFFF9;
+	border: 2px solid #7FBABD;
 	border-radius: 5px;
 }
 
@@ -137,7 +137,7 @@
 	display: none;
 	position: absolute;
 	min-width: 198px;
-	border: 2px solid #7CFF8C;
+	border: 2px solid white;
 	border-radius: 10px 0 10px 10px;
 	z-index: 2;
 	margin-left: -118px;
@@ -162,14 +162,14 @@
 	z-index: 1;
 	margin-left: 0;
 	margin-top: -20px;
-	background-color: #B0F1F7;
+	background-color: #6EFFF9;
 	border-radius: 8px 0 3px 3px;
 	float: left;
 	padding-top: 25px;
 
 }
 .settings:hover > .settings-image {
-	border-color: #7CFF8C;
+	border-color: white;
 	border-width: 2px;
 	border-bottom-width: 0;
 	border-radius: 5px 5px 0px 0px;

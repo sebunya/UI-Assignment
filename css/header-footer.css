@@ -7,15 +7,19 @@
 
 .menulist a:visited, .menulist a:link {
 	text-decoration: none;
-	color:#BBB;
+	color: #84D1BF;
+	padding: 9px 9px;
 }
 
 .menulist li {
-	color: #BBB;
 	line-height: 29px;
 	text-transform: capitalize;
-	padding:0px 9px;
 	float: left;
+}
+
+.menulist li:hover >a{
+	background-color: #00A3FF;
+	color: black;
 }
 
 #footer {	

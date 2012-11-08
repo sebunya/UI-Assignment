@@ -1,16 +1,17 @@
 html{
-	background-image: Url(../images/background-image.jpeg);
+	/*background-image: Url(../images/background-image.jpeg);*/
+	background-color: #B0ECFF;
 }
 body {
 	top:0;
 	left:0;
 	right:0;
 	left:0;
-	background-color: white;
+	background-color: #B0ECFF;
 	margin: 0;
 	padding: 0;
 	font-size: 13px;
 	font-family: Arial, sans-serif;
-	background-image: Url(../images/background-image.jpeg);
+	/*background-image: Url(../images/background-image.jpeg);*/
 }
 
