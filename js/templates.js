@@ -53,7 +53,9 @@ var Template = function(){
 									"</div>"+
 								"</div>"+
 							"</div>"+
-							"<div class={{OverlayBackgroundClass}}></div>"
+							"<div class={{OverlayBackgroundClass}}></div>",
+			globalWidgetButtonTemplate: "<button class={{MinimizeAllClass}}> v </button>"+
+										"<button class = {{CloseAllClass}}> X </button>"
 		};
 	return {
 		render: function(template,data){
@@ -69,6 +71,9 @@ var Template = function(){
 		},
 		getOverlayTemplate: function(){
 			return templates.overlayTemplate;
+		},
+		getGlobalWidgetButtonTemplate: function(){
+			return templates.globalWidgetButtonTemplate;
 		}
 	};
 };

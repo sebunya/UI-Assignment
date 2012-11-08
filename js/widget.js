@@ -1,4 +1,5 @@
 var Widget = function(data){
+	var widgetId;
 	this.data = data;
 	this.parent = document.getElementById(this.data.columnElement);
 	this.widget = {};
@@ -29,11 +30,22 @@ Widget.prototype.minimize = function() {
 
 Widget.prototype.maximize = function() {
 	var contentWindow = getElementsByClassName(this.widget.widgetDiv, 'window')[0],
-		minimizeButton = getElementsByClassName(this.widget.widgetDiv,'window-maximize')[0],
+		maximizeButton = getElementsByClassName(this.widget.widgetDiv,'window-maximize')[0],
 		WidgetBody =getElementsByClassName(this.widget.widgetDiv, 'body')[0];
 	WidgetBody.style.display = "block";
 	contentWindow.style.minHeight = "220px";
-	minimizeButton.className = 'window-minimize';
+	maximizeButton.className = 'window-minimize';
+};
+
+Widget.prototype.close = function(){
+	var thisWidget = this.widget.widgetDiv;
+	for(var i=0,len=GlobalWidgets.length;i<len;i++){
+		if(GlobalWidgets[i] == this){
+			console.log(i);
+			GlobalWidgets.splice(i,1);
+		}
+	}
+	this.parent.removeChild(thisWidget);
 };
 Widget.prototype.attachEventHandlers = function(){
 	var widgetDiv = this.widget.widgetDiv,
@@ -50,7 +62,8 @@ Widget.prototype.attachEventHandlers = function(){
 		return false;
 	};
 	closeButton.onclick = function(){
-		me.parent.removeChild(widgetDiv);
+		me.close();
+		return false;
 	};
 };
 
