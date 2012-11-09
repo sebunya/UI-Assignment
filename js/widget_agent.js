@@ -43,8 +43,8 @@ var WidgetAgent = function(){
 		thisOverlay = overlayDiv;
 		document.body.appendChild(thisOverlay);
 		attachEventHandlers();
-	};
-	var attachGlobalWidgetHandlers = function(){
+	},
+	attachGlobalWidgetHandlers = function(){
 		var minimizeAllButton = getElementsByClassName(allWidgetButtons,'minimize-all')[0],
 			closeAllButton = getElementsByClassName(allWidgetButtons,'close-all')[0];
 
@@ -66,13 +66,13 @@ var WidgetAgent = function(){
 			removeGlobalWidgetButtons();
 			return false;
 		};
-	};
-	var removeGlobalWidgetButtons = function(){
+	},
+	removeGlobalWidgetButtons = function(){
 		while(allWidgetButtons.hasChildNodes()){
 			allWidgetButtons.removeChild(allWidgetButtons.childNodes[0]);
 		}
-	}
-	var showGlobalWidgetButtons = function(){
+	},
+	showGlobalWidgetButtons = function(){
 		var globalWidgetButtonsTemplate = templates.getGlobalWidgetButtonTemplate(),
 			allWidgetButtonsHTML = templates.render(globalWidgetButtonsTemplate,{
 				MinimizeAllClass: 'minimize-all',
@@ -81,19 +81,21 @@ var WidgetAgent = function(){
 		allWidgetButtons = getElementsByClassName(document.body,'all-widgets-buttons')[0];
 		allWidgetButtons.innerHTML = allWidgetButtonsHTML;
 		attachGlobalWidgetHandlers(allWidgetButtons);
-	}
+	};
 	this.render = function(){
 		renderOverlay();
 	};
-
+	this.removeGlobalButtons = function(){
+		removeGlobalWidgetButtons();
+	};
 }
 
 //What is better??? OnClick create object OR onclick show the overlay
 window.onload = function(){
 	var me = this,
-		addGadget = document.getElementById("addGadget"),
-		widgetAgent = new WidgetAgent();
-	
+		addGadget = document.getElementById("addGadget");
+		
+	me.widgetAgent = new WidgetAgent();
 	me.GlobalWidgets = [];
 	addGadget.onclick = function(){
 		widgetAgent.render();

@@ -41,11 +41,13 @@ Widget.prototype.close = function(){
 	var thisWidget = this.widget.widgetDiv;
 	for(var i=0,len=GlobalWidgets.length;i<len;i++){
 		if(GlobalWidgets[i] == this){
-			console.log(i);
 			GlobalWidgets.splice(i,1);
 		}
 	}
 	this.parent.removeChild(thisWidget);
+	if(GlobalWidgets.length == 0){
+		widgetAgent.removeGlobalButtons();
+	}
 };
 Widget.prototype.attachEventHandlers = function(){
 	var widgetDiv = this.widget.widgetDiv,
