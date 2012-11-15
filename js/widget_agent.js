@@ -6,7 +6,7 @@ var WidgetDialog = (function(){
 				thisOverlay,
 				data = {},
 				templates = new Template(),
-				allWidgetButtons,
+				widgetManager = WidgetManager,
 				attachEventHandlers = function(){
 					var submitButton = getElementsByClassName(thisOverlay,'submit')[0],
 						cancelButton = getElementsByClassName(thisOverlay,'cancel')[0];
@@ -19,7 +19,7 @@ var WidgetDialog = (function(){
 						var columns = getElementsByClassName(thisOverlay,'options')[0];
 						data.columnElement = columns.options[columns.selectedIndex].text;
 						currentWidget = new Widget(data);
-						showGlobalWidgetButtons();
+						widgetManager.showGlobalWidgetButtons();
 						GlobalWidgets.push(currentWidget);
 						document.body.removeChild(thisOverlay);
 					};
@@ -46,51 +46,13 @@ var WidgetDialog = (function(){
 					thisOverlay = overlayDiv;
 					document.body.appendChild(thisOverlay);
 					attachEventHandlers();
-				},
-				attachGlobalWidgetHandlers = function(){
-					var minimizeAllButton = getElementsByClassName(allWidgetButtons,'minimize-all')[0],
-						closeAllButton = getElementsByClassName(allWidgetButtons,'close-all')[0];
-
-					minimizeAllButton.onclick = function(){
-						for(var i=0,len = GlobalWidgets.length;i<len;i++){
-							var minimizeButton = getElementsByClassName(GlobalWidgets[i].widget.widgetDiv,'window-minimize')[0];
-							if(minimizeButton != undefined && minimizeButton.className == 'window-minimize'){
-								GlobalWidgets[i].minimize();
-							}
-						};
-						return false;
-					};
-					closeAllButton.onclick = function(){
-						var length = GlobalWidgets.length;
-						for(var index=length-1;index>=0;index--){
-							if(GlobalWidgets[index])
-								GlobalWidgets[index].close();
-						};
-						removeGlobalWidgetButtons();
-						return false;
-					};
-				},
-				removeGlobalWidgetButtons = function(){
-					while(allWidgetButtons.hasChildNodes()){
-						allWidgetButtons.removeChild(allWidgetButtons.childNodes[0]);
-					}
-				},
-				showGlobalWidgetButtons = function(){
-					var globalWidgetButtonsTemplate = templates.getGlobalWidgetButtonTemplate(),
-						allWidgetButtonsHTML = templates.render(globalWidgetButtonsTemplate,{
-							MinimizeAllClass: 'minimize-all',
-							CloseAllClass: 'close-all'
-						});
-					allWidgetButtons = getElementsByClassName(document.body,'all-widgets-buttons')[0];
-					allWidgetButtons.innerHTML = allWidgetButtonsHTML;
-					attachGlobalWidgetHandlers(allWidgetButtons);
 				};
-			return {
+				return {
 				render: function(){
 					renderOverlay();
 				},
 				removeGlobalWidgetButtons: function(){
-					removeGlobalWidgetButtons();
+					widgetManager.removeGlobalWidgetButtons();
 				}
 			}
 		};
