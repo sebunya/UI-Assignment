@@ -46,7 +46,8 @@ Widget.prototype.close = function(){
 	}
 	this.parent.removeChild(thisWidget);
 	if(GlobalWidgets.length == 0){
-		widgetAgent.removeGlobalButtons();
+		var widgetDialog = WidgetDialog;
+		widgetDialog.removeGlobalWidgetButtons();
 	}
 };
 Widget.prototype.attachEventHandlers = function(){
