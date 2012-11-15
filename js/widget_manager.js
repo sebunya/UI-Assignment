@@ -12,7 +12,7 @@ var WidgetManager = (function(){
 
 					minimizeAllButton.onclick = function(){
 						for(var i=0,len = GlobalWidgets.length;i<len;i++){
-							var minimizeButton = getElementsByClassName(GlobalWidgets[i].widget.widgetDiv,'window-minimize')[0];
+							var minimizeButton = getElementsByClassName(GlobalWidgets[i].el,'window-minimize')[0];
 							if(minimizeButton != undefined && minimizeButton.className == 'window-minimize'){
 								GlobalWidgets[i].minimize();
 							}

@@ -2,7 +2,7 @@ var Template = function(){
 	var templates = {
 			widget: "<div class = {{VShadowClass}}>"+
 						"<div class={{WindowClass}}>"+
-							"<div class={{TitleBarClass}}>"+
+							"<div class={{TitleBarClass}}>"+ //Title div
 								"<a href={{TitleBarAnchor}}></a>"+
 								"<div class={{WidgetIconClass}}></div>"+
 								"<div class={{TitleClass}}>{{Title}}</div>"+
@@ -21,7 +21,7 @@ var Template = function(){
 									"<span class={{WindowCloseClass}}></span>"+
 								"</div>"+
 							"</div>"+
-							"<div class={{BodyClass}}>"+
+							"<div class={{BodyClass}}>"+  //Body Div
 								"{{body}}"+
 							"</div>"+
 						"</div>"+
@@ -54,7 +54,7 @@ var Template = function(){
 								"</div>"+
 							"</div>"+
 							"<div class={{OverlayBackgroundClass}}></div>",
-			globalWidgetButtonTemplate: "<button class={{MinimizeAllClass}}> v </button>"+
+			globalWidgetButtonTemplate: "<button class={{MinimizeAllClass}}> - </button>"+
 										"<button class = {{CloseAllClass}}> X </button>"
 		};
 	return {

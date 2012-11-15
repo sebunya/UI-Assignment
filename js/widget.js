@@ -2,12 +2,13 @@ var Widget = function(data){
 	var widgetId;
 	this.data = data;
 	this.parent = document.getElementById(this.data.columnElement);
-	this.widget = {};
+	this.el;
 	this.templates = new Template(),
 	this.thisWidgetTemplate = this.templates.getWidgetTemplate()
 	this.addNewWidget();
 }
-Widget.prototype.addMenuItems = function(){
+var WidgetPrototype = Widget.prototype;
+WidgetPrototype.addMenuItems = function(){
 	var parent = arguments[0],
 		listElement;
 	for(var i=1;i<arguments.length;i++){
@@ -17,30 +18,30 @@ Widget.prototype.addMenuItems = function(){
 	}
 	return false;
 };
-Widget.prototype.addNewWidget = function(){
+WidgetPrototype.addNewWidget = function(){
 	this.createNewWidget();		
 };
 
-Widget.prototype.minimize = function() {
-	var contentWindow = getElementsByClassName(this.widget.widgetDiv, 'window')[0],
-		minimizeButton = getElementsByClassName(this.widget.widgetDiv,'window-minimize')[0],
-		WidgetBody =getElementsByClassName(this.widget.widgetDiv, 'body')[0];
+WidgetPrototype.minimize = function() {
+	var contentWindow = getElementsByClassName(this.el, 'window')[0],
+		minimizeButton = getElementsByClassName(this.el,'window-minimize')[0],
+		WidgetBody =getElementsByClassName(this.el, 'body')[0];
 	WidgetBody.style.display = "None";
 	contentWindow.style.minHeight = "40px";
 	minimizeButton.className = 'window-maximize';	
 };
 
-Widget.prototype.maximize = function() {
-	var contentWindow = getElementsByClassName(this.widget.widgetDiv, 'window')[0],
-		maximizeButton = getElementsByClassName(this.widget.widgetDiv,'window-maximize')[0],
-		WidgetBody =getElementsByClassName(this.widget.widgetDiv, 'body')[0];
+WidgetPrototype.maximize = function() {
+	var contentWindow = getElementsByClassName(this.el, 'window')[0],
+		maximizeButton = getElementsByClassName(this.el,'window-maximize')[0],
+		WidgetBody =getElementsByClassName(this.el, 'body')[0];
 	WidgetBody.style.display = "block";
 	contentWindow.style.minHeight = "220px";
 	maximizeButton.className = 'window-minimize';
 };
 
-Widget.prototype.close = function(){
-	var thisWidget = this.widget.widgetDiv;
+WidgetPrototype.close = function(){
+	var thisWidget = this.el;
 	for(var i=0,len=GlobalWidgets.length;i<len;i++){
 		if(GlobalWidgets[i] == this){
 			GlobalWidgets.splice(i,1);
@@ -52,8 +53,8 @@ Widget.prototype.close = function(){
 		widgetDialog.removeGlobalWidgetButtons();
 	}
 };
-Widget.prototype.attachEventHandlers = function(){
-	var widgetDiv = this.widget.widgetDiv,
+WidgetPrototype.attachEventHandlers = function(){
+	var widgetDiv = this.el,
 		minimizeButton = getElementsByClassName(widgetDiv,'window-minimize')[0],
 		closeButton = getElementsByClassName(widgetDiv,'window-close')[0],
 		me = this;
@@ -72,7 +73,7 @@ Widget.prototype.attachEventHandlers = function(){
 	};
 };
 
-Widget.prototype.createNewWidget = function() {
+WidgetPrototype.createNewWidget = function() {
 	var widgetTemplate = this.thisWidgetTemplate,
 		widgetDiv = document.createElement('div'),
 		thisWidget = this.templates.render(widgetTemplate,{
@@ -97,10 +98,10 @@ Widget.prototype.createNewWidget = function() {
 	widgetDiv.className='H-shadow';
 	widgetDiv.innerHTML = thisWidget
 	this.parent.appendChild(widgetDiv);
-	this.widget.widgetDiv = widgetDiv;
+	this.el = widgetDiv;
 	this.attachEventHandlers();
 };
 
-Widget.prototype.setTemplate = function(template){
+WidgetPrototype.setTemplate = function(template){
 	this.thisWidgetTemplate = template;
 }
