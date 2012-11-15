@@ -5,6 +5,7 @@ var WidgetManager = (function(){
 		init = function(){
 			var allWidgetButtons,
 				templates = new Template(),
+				thisTemplate = templates.getGlobalWidgetButtonTemplate(),
 				attachGlobalWidgetHandlers = function(){
 					var minimizeAllButton = getElementsByClassName(allWidgetButtons,'minimize-all')[0],
 						closeAllButton = getElementsByClassName(allWidgetButtons,'close-all')[0];
@@ -34,6 +35,9 @@ var WidgetManager = (function(){
 					}
 				};
 				return {
+					setTemplate: function(template){
+						thisTemplate = template;
+					},
 					attachGlobalWidgetHandlers: function(){
 						attachGlobalWidgetHandlers();
 					},
@@ -41,7 +45,7 @@ var WidgetManager = (function(){
 						removeGlobalWidgetButtons();
 					},
 					showGlobalWidgetButtons: function(){
-						var globalWidgetButtonsTemplate = templates.getGlobalWidgetButtonTemplate(),
+						var globalWidgetButtonsTemplate = thisTemplate,
 							allWidgetButtonsHTML = templates.render(globalWidgetButtonsTemplate,{
 								MinimizeAllClass: 'minimize-all',
 								CloseAllClass: 'close-all'

@@ -3,6 +3,8 @@ var Widget = function(data){
 	this.data = data;
 	this.parent = document.getElementById(this.data.columnElement);
 	this.widget = {};
+	this.templates = new Template(),
+	this.thisWidgetTemplate = this.templates.getWidgetTemplate()
 	this.addNewWidget();
 }
 Widget.prototype.addMenuItems = function(){
@@ -71,10 +73,9 @@ Widget.prototype.attachEventHandlers = function(){
 };
 
 Widget.prototype.createNewWidget = function() {
-	var templates = new Template(),
-		widgetTemplate = templates.getWidgetTemplate(),
+	var widgetTemplate = this.thisWidgetTemplate,
 		widgetDiv = document.createElement('div'),
-		thisWidget = templates.render(widgetTemplate,{
+		thisWidget = this.templates.render(widgetTemplate,{
 			VShadowClass: 'V-shadow',
 			WindowClass: 'window',
 			TitleBarClass: 'title-bar clearfix',
@@ -100,3 +101,6 @@ Widget.prototype.createNewWidget = function() {
 	this.attachEventHandlers();
 };
 
+Widget.prototype.setTemplate = function(template){
+	this.thisWidgetTemplate = template;
+}

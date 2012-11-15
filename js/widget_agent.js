@@ -6,6 +6,7 @@ var WidgetDialog = (function(){
 				thisOverlay,
 				data = {},
 				templates = new Template(),
+				thisTemplate = templates.getOverlayTemplate(),
 				widgetManager = WidgetManager,
 				attachEventHandlers = function(){
 					var submitButton = getElementsByClassName(thisOverlay,'submit')[0],
@@ -25,7 +26,7 @@ var WidgetDialog = (function(){
 					};
 				},
 				renderOverlay = function(){
-					var overlayTemplate = templates.getOverlayTemplate(),
+					var overlayTemplate = thisTemplate,
 						overlayDiv = document.createElement('div'),	
 						overlayHTML = templates.render(overlayTemplate,{
 							WidgetOverlayClass: 'widget-overlay',
@@ -47,7 +48,10 @@ var WidgetDialog = (function(){
 					document.body.appendChild(thisOverlay);
 					attachEventHandlers();
 				};
-				return {
+			return {
+				setTemplate: function(template){
+					thisTemplate = template;
+				},
 				render: function(){
 					renderOverlay();
 				},
