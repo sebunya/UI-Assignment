@@ -1,34 +1,32 @@
 var WidgetDialog = (function(){
 	var instance,
-		me = this,
-		init = function(){
-			var currentWidget,
-				thisOverlay,
+		ThisDialog = function(){
+			this.parent = document.body;
+			this.template = this.templates.getOverlayTemplate();
+			var me = this,
+				currentWidget,
+				el,
 				data = {},
-				templates = new Template(),
-				thisTemplate = templates.getOverlayTemplate(),
 				widgetManager = WidgetManager,
 				attachEventHandlers = function(){
-					var submitButton = getElementsByClassName(thisOverlay,'submit')[0],
-						cancelButton = getElementsByClassName(thisOverlay,'cancel')[0];
+					var submitButton = getElementsByClassName(el,'submit')[0],
+						cancelButton = getElementsByClassName(el,'cancel')[0];
 					cancelButton.onclick = function(){
-						document.body.removeChild(thisOverlay);
+						me.parent.removeChild(el);
 					};
 					submitButton.onclick = function(){
-						data.title = getElementsByClassName(thisOverlay,'title-input')[0].value;
-						data.body = getElementsByClassName(thisOverlay,'body-input')[0].value;
-						var columns = getElementsByClassName(thisOverlay,'options')[0];
+						data.title = getElementsByClassName(el,'title-input')[0].value;
+						data.body = getElementsByClassName(el,'body-input')[0].value;
+						var columns = getElementsByClassName(el,'options')[0];
 						data.columnElement = columns.options[columns.selectedIndex].text;
 						currentWidget = new Widget(data);
 						widgetManager.showGlobalWidgetButtons();
 						GlobalWidgets.push(currentWidget);
-						document.body.removeChild(thisOverlay);
+						me.parent.removeChild(el);
 					};
-				},
-				renderOverlay = function(){
-					var overlayTemplate = thisTemplate,
-						overlayDiv = document.createElement('div'),	
-						overlayHTML = templates.render(overlayTemplate,{
+				};
+			this.renderOverlay = function(){
+				var data = {
 							WidgetOverlayClass: 'widget-overlay',
 							WidgetFormClass: 'widget-form',
 							OverlayTitleClass: 'overlay-title',
@@ -41,29 +39,26 @@ var WidgetDialog = (function(){
 							SubmitClass: 'submit',
 							CancelClass: 'cancel',
 							OverlayBackgroundClass: 'overlay-background'
-						});
-					overlayDiv.className = 'overlay';
-					overlayDiv.innerHTML = overlayHTML;
-					thisOverlay = overlayDiv;
-					document.body.appendChild(thisOverlay);
-					attachEventHandlers();
-				};
-			return {
-				setTemplate: function(template){
-					thisTemplate = template;
-				},
-				render: function(){
-					renderOverlay();
-				},
-				removeGlobalWidgetButtons: function(){
-					widgetManager.removeGlobalWidgetButtons();
-				}
+						};
+				el = this.render({template:this.template,
+					className: 'overlay',
+					classData: data,
+					parent: this.parent
+				});
+				attachEventHandlers();
+			};
+			this.removeGlobalWidgetButtons = function(){
+				widgetManager.removeGlobalWidgetButtons();
+			};
+			this.setTemplate = function() {
+				Dialog.prototype.setTemplate.call(this, arguments);
+
 			}
 		};
-
+		ThisDialog.prototype = new Dialog;
 	return getInstance = (function(){
 			if(!instance){
-				instance = init();
+				instance = new ThisDialog();
 			}
 			return instance;
 		})();
@@ -77,6 +72,6 @@ window.onload = function(){
 		widgetDialog = WidgetDialog;
 	me.GlobalWidgets = [];
 	addGadget.onclick = function(){
-		widgetDialog.render();
+		widgetDialog.renderOverlay();
 	}
 }
