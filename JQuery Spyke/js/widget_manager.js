@@ -1,30 +1,29 @@
 //Job: global minimize and global close functionalities. Managing all the widgets.
 var WidgetManager = (function(){
 	var instance,
+		manager = this,
 		init = function(){
 			var allWidgetButtons,
-				allWidgets = [],
 				templates = new Template(),
 				thisTemplate = templates.getGlobalWidgetButtonTemplate(),
-				me = this,
 				attachGlobalWidgetHandlers = function(){
 					var minimizeAllButton = getElementsByClassName(allWidgetButtons,'minimize-all')[0],
 						closeAllButton = getElementsByClassName(allWidgetButtons,'close-all')[0];
 
 					minimizeAllButton.onclick = function(){
-						for(var i=0,len = allWidgets.length;i<len;i++){
-							var minimizeButton = getElementsByClassName(allWidgets[i].el,'window-minimize')[0];
+						for(var i=0,len = GlobalWidgets.length;i<len;i++){
+							var minimizeButton = getElementsByClassName(GlobalWidgets[i].el,'window-minimize')[0];
 							if(minimizeButton != undefined && minimizeButton.className == 'window-minimize'){
-								allWidgets[i].minimize();
+								GlobalWidgets[i].minimize();
 							}
 						};
 						return false;
 					};
 					closeAllButton.onclick = function(){
-						var length = allWidgets.length;
+						var length = GlobalWidgets.length;
 						for(var index=length-1;index>=0;index--){
-							if(allWidgets[index])
-								allWidgets[index].close();
+							if(GlobalWidgets[index])
+								GlobalWidgets[index].close();
 						};
 						removeGlobalWidgetButtons();
 						return false;
@@ -55,20 +54,7 @@ var WidgetManager = (function(){
 						allWidgetButtons.innerHTML = allWidgetButtonsHTML;
 						attachGlobalWidgetHandlers(allWidgetButtons);
 
-					},
-					add: function(widget){
-						allWidgets.push(widget);
-					},
-					removeWidget: function(widget){
-						for(var i=0,len=allWidgets.length;i<len;i++){
-							if(allWidgets[i] == widget){
-								allWidgets.splice(i,1);
-							}
-						}
-						if(allWidgets.length == 0){
-							removeGlobalWidgetButtons();
-						}
-					}
+					}				
 				};
 		};
 	return (getInstance = function(){

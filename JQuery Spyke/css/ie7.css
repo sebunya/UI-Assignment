@@ -1,0 +1,105 @@
+body{
+	overflow: auto;
+}
+.menulist li {
+	line-height: 27px;
+}
+.more-list-arrow {
+	background-position: -3px -50px;
+}
+.more-list{
+	margin-top: 5px;
+}
+#header .menulist .more-list:hover  >ul{
+	margin: 25px -47px 0;
+}
+.search-text{
+	margin-bottom: 19px;
+	border-left: 0px;
+	line-height: 26px;
+	margin-left:0px
+}
+.nifty-left-round-corner {
+	display: block;
+	margin-left: 50px;
+	width: 10px;
+}
+#navigation{
+	min-height: 71px;
+}
+
+.search-logo, .search-button{
+	float: left;
+}
+.title-bar{
+	display: inline-block;
+	background-image: url(../images/gradients/widget-title.png);
+	background-repeat: repeat-x;
+}
+.widget-menu {
+	margin-top: 8px;
+	margin-right: 0px;
+	margin-left: 0;
+	margin-bottom: 8px;
+}
+.window {
+	background-image: url(../images/gradients/widget-bottom.png);
+	background-repeat: repeat;
+	background-position: 0% 100%;
+}
+.widget-icon {
+	width: 28px;
+	height: 28px;
+}
+.window-minimize,.window-close {
+	line-height: normal;
+}
+
+.themes {
+	position: relative;
+	margin-top: -4px;
+	padding-bottom: 10px;
+}
+.themes >ul {
+	border-radius: 0;
+}
+.H-shadow {
+	max-width: 400px;
+	background: url(../images/gradients/shadow-vertical.png);
+	padding-bottom: 5px;
+	min-height: 210px;
+	background-repeat: repeat-x;
+	background-position: 0% 100%;
+	padding-right: 0;
+}
+.V-shadow {
+	background: url(../images/gradients/shadow-horizontal.png);
+	padding-right: 5px;
+	background-position: 100% 0%;
+	background-repeat: repeat-y;
+	margin-right: -2px;
+}	
+.window {
+	margin-top: -2px;
+	margin-left: -2px;
+}
+
+.settings {
+	position: absolute;
+	right: 50px;
+}
+.nifty-left-round-corner {
+	margin-right: 0px;
+	width: 10px;
+}
+#footer > .more:hover {
+	height: 150px;
+}
+
+#footer > .more:hover > .footer-central-links div{
+	display: block;
+}
+
+#footer > .more:hover  > .footer-central-links+div {
+	display: block;
+}

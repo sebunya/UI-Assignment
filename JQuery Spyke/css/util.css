@@ -1,0 +1,63 @@
+.more-list-arrow {
+	height: 26px;
+	width: 10px;
+	font-size: 0px;
+	color: white;
+	display: inline-block;
+	background-image: url(../images/small_images.png);
+	background-repeat: no-repeat;
+	background-position: -3px -50px;
+}
+
+#header .menulist .more-list:hover  >ul {
+	display: block;
+}
+
+#header ul ul {
+	display: none;
+	margin: 0 4px 0;
+	padding-right: 0px;
+	z-index: 999;
+	position: absolute;
+	background-color: white;
+	border: 2px solid #00AEC5;
+	border-top: 0;
+	text-align: left;
+}
+
+#header ul ul li {
+	clear: both;
+	width: 115px;
+	line-height: 33px;
+}
+#header ul ul li:hover{
+	background: #00A3FF;
+}
+
+#header ul ul a:visited, #header ul ul a:link {
+	text-decoration: none;
+	color:black;
+}
+
+.logo {		
+	float: left;
+	position: relative;
+	width: 120px;
+	margin: 0px 8px;
+	padding: 11px 0px;
+	padding-left: 1%;
+	font-family: cursive;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: bolder;
+	text-align: center;
+	vertical-align: middle;
+	color: black;
+}
+
+
+.clearfix:before,.clearfix:after{
+	content:"";
+	display:block;
+	clear: both;
+}

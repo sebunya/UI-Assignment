@@ -3,7 +3,6 @@ var Widget = function(data){
 	this.parent = document.getElementById(this.data.columnElement);
 	this.el;
 	this.template = this.templates.getWidgetTemplate()
-	this.widgetManager = WidgetManager,
 	this.addNewWidget();
 }
 Widget.prototype = new Dialog;
@@ -65,8 +64,16 @@ WidgetPrototype.maximize = function() {
 };
 
 WidgetPrototype.close = function(){
+	for(var i=0,len=GlobalWidgets.length;i<len;i++){
+		if(GlobalWidgets[i] == this){
+			GlobalWidgets.splice(i,1);
+		}
+	}
 	this.parent.removeChild(this.el);
-	this.widgetManager.removeWidget(this);
+	if(GlobalWidgets.length == 0){
+		var widgetDialog = WidgetDialog;
+		widgetDialog.removeGlobalWidgetButtons();
+	}
 };
 WidgetPrototype.attachEventHandlers = function(){
 	var minimizeButton = getElementsByClassName(this.el,'window-minimize')[0],

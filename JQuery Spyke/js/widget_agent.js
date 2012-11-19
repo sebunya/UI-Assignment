@@ -21,7 +21,7 @@ var WidgetDialog = (function(){
 						data.columnElement = columns.options[columns.selectedIndex].text;
 						currentWidget = new Widget(data);
 						widgetManager.showGlobalWidgetButtons();
-						widgetManager.add(currentWidget);
+						GlobalWidgets.push(currentWidget);
 						me.parent.removeChild(el);
 					};
 				};
@@ -47,6 +47,9 @@ var WidgetDialog = (function(){
 				});
 				attachEventHandlers();
 			};
+			this.removeGlobalWidgetButtons = function(){
+				widgetManager.removeGlobalWidgetButtons();
+			};
 			this.setTemplate = function() {
 				Dialog.prototype.setTemplate.call(this, arguments);
 
@@ -67,6 +70,7 @@ window.onload = function(){
 	var me = this,
 		addGadget = document.getElementById("addGadget"),
 		widgetDialog = WidgetDialog;
+	me.GlobalWidgets = [];
 	addGadget.onclick = function(){
 		widgetDialog.renderOverlay();
 	}

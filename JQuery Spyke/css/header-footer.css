@@ -1,0 +1,139 @@
+.menulist {
+	font-weight: bold;
+	background-color: #2D2D2D;
+	padding-left:35px;
+	margin: 0;
+}
+
+.menulist a:visited, .menulist a:link {
+	text-decoration: none;
+	color: #84D1BF;
+	padding: 9px 9px;
+}
+
+.menulist li {
+	line-height: 29px;
+	text-transform: capitalize;
+	float: left;
+}
+
+.menulist li:hover >a{
+	background-color: #00A3FF;
+	color: black;
+}
+
+#footer {	
+	padding-top: 15px;
+	font-size: 12px;
+	position: fixed;
+	display: block;
+	width: 100%;
+	bottom: 0px;
+	min-height: 25px;
+	border-top: 2px solid #0069FF;
+	background-color: #A0D4EC;
+	text-align: center;
+	vertical-align: middle;
+	text-transform: capitalize;
+	z-index: 20;
+	min-width: 350px;
+}
+
+.copy-right{
+	float: left;
+	display: block;
+	margin: 0px 35% 0px;
+	color: black;
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 14px;
+	font-style: oblique;
+}
+.footer-central-links {
+	margin: 10px 0 0 32%;
+	float: left;
+}
+
+.footer-central-links div{
+	display: none;
+	float: left;
+	max-width: 150px;
+	margin: 0px 40px 0px;
+}
+
+.footer-central-links div >h1 {
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+.footer-central-links div ul {
+	max-width: 150px;
+	display: block;
+}
+.footer-central-links div ul li{
+	text-align: left;
+	list-style: inside square;
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
+label {
+	color: blueViolet;
+	font-style: italic;
+	float: left;
+	position: relative;
+	display: block;
+	cursor: pointer;
+	margin-left: -30%;
+}
+
+.show-less{
+	display: none;
+}
+
+#show-footer-links:checked  ~ .footer-central-links div {
+	display: block;
+}
+
+#show-footer-links:checked  ~ .footer-central-links+div {
+	display: block;
+}
+
+#show-footer-links:checked  ~ .show-less{
+	display: block;
+}
+#show-footer-links:checked  ~ .show-more{
+	display: none;
+}
+
+#footer a:visited, #footer a:link {
+	text-decoration: none;
+	color:#4C55CD;
+}
+
+.secondary-logo{	
+	display: none;
+	background: url(../images/small_images.png);
+	background-position:	-100px -15px;
+	min-height: 98px;
+	width: 13%;
+	min-width: 221px;
+	background-repeat: no-repeat;
+	float: right;
+	margin-right: 25px;
+	margin-bottom: 9px;
+	margin-top: 10px;
+
+}
+
+#footer > .more {
+	display: block;
+	width: 100%;
+	min-height: 20px;
+}
