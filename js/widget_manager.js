@@ -19,7 +19,7 @@ var WidgetManager = (function(){
 							}
 						};
 						return false;
-					};
+					}; 
 					closeAllButton.onclick = function(){
 						var length = allWidgets.length;
 						for(var index=length-1;index>=0;index--){
@@ -36,6 +36,9 @@ var WidgetManager = (function(){
 					}
 				};
 				return {
+					getWidgetCount: function(){
+						return allWidgets.length;
+					},
 					setTemplate: function(template){
 						thisTemplate = template;
 					},

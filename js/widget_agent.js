@@ -22,8 +22,16 @@ var WidgetDialog = (function(){
 						currentWidget = new Widget(data);
 						widgetManager.showGlobalWidgetButtons();
 						widgetManager.add(currentWidget);
+						writeCookie(widgetManager.getWidgetCount());
+						console.log(document.cookie);
 						me.parent.removeChild(el);
 					};
+				},
+				writeCookie = function(count){
+					var now = new Date();
+					now.setMonth(now.getMonth()+1);
+					console.log(count);
+					document.cookie = "name=vishnu";
 				};
 			this.renderOverlay = function(){
 				var data = {
