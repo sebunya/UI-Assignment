@@ -43,7 +43,6 @@ WidgetPrototype.addNewWidget = function(){
 			parent: this.parent
 		});
 	this.attachEventHandlers();
-
 };
 
 WidgetPrototype.minimize = function() {

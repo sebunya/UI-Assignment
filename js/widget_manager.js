@@ -31,11 +31,33 @@ var WidgetManager = (function(){
 					};
 				},
 				removeGlobalWidgetButtons = function(){
-					while(allWidgetButtons.hasChildNodes()){
+					while(allWidgetButtons && allWidgetButtons.hasChildNodes()){
 						allWidgetButtons.removeChild(allWidgetButtons.childNodes[0]);
 					}
+				},
+				makeJsonString = function(){
+					if(allWidgets.length==0){
+						return "";
+					}
+					var str = "[";
+					for(index=0,len=allWidgets.length;index<len;index++){
+						widgetData = allWidgets[index].data;
+						str += "{";
+						for(var key in widgetData){
+							str += '"' + key + '" :' + '"' + widgetData[key] + '",';
+						}
+						str=str.substring(0,str.length-1);
+						str += "}";
+						str += ",";
+					}
+					str=str.substring(0,str.length-1);
+					str += "]";
+					return str;
 				};
 				return {
+					getAllWidgets: function(){
+						return allWidgets;
+					},
 					getWidgetCount: function(){
 						return allWidgets.length;
 					},
@@ -61,6 +83,8 @@ var WidgetManager = (function(){
 					},
 					add: function(widget){
 						allWidgets.push(widget);
+						writeCookie("widgets",makeJsonString());
+						console.log(makeJsonString());
 					},
 					removeWidget: function(widget){
 						for(var i=0,len=allWidgets.length;i<len;i++){
@@ -70,6 +94,21 @@ var WidgetManager = (function(){
 						}
 						if(allWidgets.length == 0){
 							removeGlobalWidgetButtons();
+						}
+						writeCookie("widgets",makeJsonString());
+					},
+					init: function(){
+						var cookieContent = readCookie("widgets");
+						if(cookieContent){	
+							var widgets = JSON.parse(cookieContent);
+							for(var i=0,len=widgets.length;i<len;i++){
+								var data={},
+									thisWidget = widgets[i];
+								for(var key in thisWidget){
+									data[key] = thisWidget[key];
+								}
+								allWidgets.push(new Widget(data));
+							}
 						}
 					}
 				};

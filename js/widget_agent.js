@@ -15,23 +15,16 @@ var WidgetDialog = (function(){
 						me.parent.removeChild(el);
 					};
 					submitButton.onclick = function(){
-						data.title = getElementsByClassName(el,'title-input')[0].value;
-						data.body = getElementsByClassName(el,'body-input')[0].value;
+						data = {};
+						data.title = getElementsByClassName(el,'title-input')[0].value ||"Default Title";
+						data.body = getElementsByClassName(el,'body-input')[0].value ||"Default Body";
 						var columns = getElementsByClassName(el,'options')[0];
 						data.columnElement = columns.options[columns.selectedIndex].text;
 						currentWidget = new Widget(data);
 						widgetManager.showGlobalWidgetButtons();
 						widgetManager.add(currentWidget);
-						writeCookie(widgetManager.getWidgetCount());
-						console.log(document.cookie);
 						me.parent.removeChild(el);
 					};
-				},
-				writeCookie = function(count){
-					var now = new Date();
-					now.setMonth(now.getMonth()+1);
-					console.log(count);
-					document.cookie = "name=vishnu";
 				};
 			this.renderOverlay = function(){
 				var data = {
@@ -75,6 +68,8 @@ window.onload = function(){
 	var me = this,
 		addGadget = document.getElementById("addGadget"),
 		widgetDialog = WidgetDialog;
+		widgetManager = WidgetManager;
+	widgetManager.init();
 	addGadget.onclick = function(){
 		widgetDialog.renderOverlay();
 	}
