@@ -44,7 +44,7 @@ var WidgetManager = (function(){
 						widgetData = allWidgets[index].data;
 						str += "{";
 						for(var key in widgetData){
-							str += '"' + key + '" :' + '"' + widgetData[key] + '",';
+							str += '"' + key + '" :' + '"' + escape(escape(widgetData[key])) + '",';
 						}
 						str=str.substring(0,str.length-1);
 						str += "}";
@@ -84,7 +84,6 @@ var WidgetManager = (function(){
 					add: function(widget){
 						allWidgets.push(widget);
 						writeCookie("widgets",makeJsonString());
-						console.log(makeJsonString());
 					},
 					removeWidget: function(widget){
 						for(var i=0,len=allWidgets.length;i<len;i++){
@@ -98,14 +97,14 @@ var WidgetManager = (function(){
 						writeCookie("widgets",makeJsonString());
 					},
 					init: function(){
-						var cookieContent = readCookie("widgets");
+						var cookieContent = unescape(readCookie("widgets"));
 						if(cookieContent){	
 							var widgets = JSON.parse(cookieContent);
 							for(var i=0,len=widgets.length;i<len;i++){
 								var data={},
 									thisWidget = widgets[i];
 								for(var key in thisWidget){
-									data[key] = thisWidget[key];
+									data[key] = unescape(unescape(thisWidget[key]));
 								}
 								allWidgets.push(new Widget(data));
 							}

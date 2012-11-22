@@ -16,8 +16,8 @@ var WidgetDialog = (function(){
 					};
 					submitButton.onclick = function(){
 						data = {};
-						data.title = getElementsByClassName(el,'title-input')[0].value ||"Default Title";
-						data.body = getElementsByClassName(el,'body-input')[0].value ||"Default Body";
+						data.title = getElementsByClassName(el,'title-input')[0].value || ajaxRequest({'url':'./data/title.txt','AsyncFlag':false}).responseText;
+						data.body = getElementsByClassName(el,'body-input')[0].value || ajaxRequest({'url':'./data/body.txt','AsyncFlag':false}).responseText;
 						var columns = getElementsByClassName(el,'options')[0];
 						data.columnElement = columns.options[columns.selectedIndex].text;
 						currentWidget = new Widget(data);

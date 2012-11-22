@@ -28,3 +28,25 @@ readCookie = function(cookieName){
 		return unescape(cookieValue);
 	}
 }
+
+ajaxRequest = function(data){
+	var AJAX = null;
+	if(window.XMLHttpRequest){
+		AJAX = new XMLHttpRequest();
+	}else{
+		AJAX = new ActiveXObject("MicrosoftXMLHTTP");
+	}
+	if(AJAX==null){
+		alert("Your Browser does not support AJAX. Use Chrome, Firefox or Safari");
+		return false;
+	}
+	AJAX.onreadystateChange = function(){
+		if(AJAX.readyState == 4|| AJAX.readyState == "complete"){
+			var callback = data.callback;
+			callback(AJAX.responseText, AJAX.status);
+		}
+	}
+	AJAX.open("GET",data.url,data.AsyncFlag);
+	AJAX.send(null);
+	return AJAX;
+}
