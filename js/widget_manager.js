@@ -2,25 +2,21 @@
 var WidgetManager = (function(){
 	var instance,
 		init = function(){
-			var allWidgetButtons,
-				allWidgets = [],
+			var allWidgets = [],
 				templates = new Template(),
 				thisTemplate = templates.getGlobalWidgetButtonTemplate(),
 				me = this,
 				attachGlobalWidgetHandlers = function(){
-					var minimizeAllButton = getElementsByClassName(allWidgetButtons,'minimize-all')[0],
-						closeAllButton = getElementsByClassName(allWidgetButtons,'close-all')[0];
-
-					minimizeAllButton.onclick = function(){
+					$('.minimize-all','.all-widgets-buttons').click(function(){
 						for(var i=0,len = allWidgets.length;i<len;i++){
-							var minimizeButton = getElementsByClassName(allWidgets[i].el,'window-minimize')[0];
-							if(minimizeButton != undefined && minimizeButton.className == 'window-minimize'){
+							var minimizeButton = $('.window-minimize',allWidgets[i].el);
+							if( minimizeButton && minimizeButton.attr('class') == 'window-minimize'){
 								allWidgets[i].minimize();
 							}
 						};
 						return false;
-					}; 
-					closeAllButton.onclick = function(){
+					}); 
+					$('.close-all','.all-widgets-buttons').click(function(){
 						var length = allWidgets.length;
 						for(var index=length-1;index>=0;index--){
 							if(allWidgets[index])
@@ -28,12 +24,10 @@ var WidgetManager = (function(){
 						};
 						removeGlobalWidgetButtons();
 						return false;
-					};
+					});
 				},
 				removeGlobalWidgetButtons = function(){
-					while(allWidgetButtons && allWidgetButtons.hasChildNodes()){
-						allWidgetButtons.removeChild(allWidgetButtons.childNodes[0]);
-					}
+					$('.all-widgets-buttons').children().remove();
 				},
 				makeJsonString = function(){
 					if(allWidgets.length==0){
@@ -76,9 +70,8 @@ var WidgetManager = (function(){
 								MinimizeAllClass: 'minimize-all',
 								CloseAllClass: 'close-all'
 							});
-						allWidgetButtons = getElementsByClassName(document.body,'all-widgets-buttons')[0];
-						allWidgetButtons.innerHTML = allWidgetButtonsHTML;
-						attachGlobalWidgetHandlers(allWidgetButtons);
+						$('.all-widgets-buttons').html(allWidgetButtonsHTML);
+						attachGlobalWidgetHandlers();
 
 					},
 					add: function(widget){
@@ -98,8 +91,9 @@ var WidgetManager = (function(){
 					},
 					init: function(){
 						var cookieContent = unescape(readCookie("widgets"));
-						if(cookieContent){	
-							var widgets = JSON.parse(cookieContent);
+						if(cookieContent){
+							this.showGlobalWidgetButtons();
+							var widgets = jQuery.parseJSON(cookieContent);
 							for(var i=0,len=widgets.length;i<len;i++){
 								var data={},
 									thisWidget = widgets[i];

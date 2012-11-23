@@ -4,9 +4,8 @@ var Dialog = function(){
 		var template = data.template,
 			thisEl = document.createElement('div'),	
 			thisHTML = this.templates.render(template,data.classData);
-		$(thisEl).addClass(data.className);
-		thisEl.innerHTML = thisHTML; //Inheritence possible at this point
-		data.parent.appendChild(thisEl);
+		$(thisEl).addClass(data.className).html(thisHTML);
+		$(data.parent).append(thisEl);
 		return thisEl;
 	}
 	this.setTemplate = function(thisTemplate){

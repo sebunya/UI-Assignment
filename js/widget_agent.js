@@ -1,7 +1,7 @@
 var WidgetDialog = (function(){
 	var instance,
 		ThisDialog = function(){
-			this.parent = document.body;
+			this.parent = $('body');
 			this.template = this.templates.getOverlayTemplate();
 			var me = this,
 				currentWidget,
@@ -9,22 +9,19 @@ var WidgetDialog = (function(){
 				data = {},
 				widgetManager = WidgetManager,
 				attachEventHandlers = function(){
-					var submitButton = getElementsByClassName(el,'submit')[0],
-						cancelButton = getElementsByClassName(el,'cancel')[0];
-					cancelButton.onclick = function(){
-						me.parent.removeChild(el);
-					};
-					submitButton.onclick = function(){
+					$('.cancel',el).click(function(){
+						$(el).remove();
+					});
+					$('.submit',el).click(function(){
 						data = {};
-						data.title = getElementsByClassName(el,'title-input')[0].value || ajaxRequest({'url':'./data/title.txt','AsyncFlag':false}).responseText;
-						data.body = getElementsByClassName(el,'body-input')[0].value || ajaxRequest({'url':'./data/body.txt','AsyncFlag':false}).responseText;
-						var columns = getElementsByClassName(el,'options')[0];
-						data.columnElement = columns.options[columns.selectedIndex].text;
+						data.title = $('.title-input',el).val() || $.ajax({'url':'./data/title.txt','async':false}).responseText;
+						data.body = $('.body-input',el).val() || $.ajax({'url':'./data/body.txt','async':false}).responseText;
+						data.columnElement = $('.options>option:selected',el).text();
 						currentWidget = new Widget(data);
 						widgetManager.showGlobalWidgetButtons();
 						widgetManager.add(currentWidget);
-						me.parent.removeChild(el);
-					};
+						$(el).remove();
+					});
 				};
 			this.renderOverlay = function(){
 				var data = {
@@ -44,7 +41,7 @@ var WidgetDialog = (function(){
 				el = this.render({template:this.template,
 					className: 'overlay',
 					classData: data,
-					parent: this.parent
+					parent: $('body')
 				});
 				attachEventHandlers();
 			};
@@ -53,24 +50,21 @@ var WidgetDialog = (function(){
 
 			}
 		};
-		ThisDialog.prototype = new Dialog;
+	ThisDialog.prototype = new Dialog();
 	return getInstance = (function(){
-			if(!instance){
-				instance = new ThisDialog();
-			}
-			return instance;
-		})();
+		if(!instance){
+			instance = new ThisDialog();
+		}
+		return instance;
+	})();
 
 })();
 
 //What is better??? OnClick create object OR onclick show the overlay
 window.onload = function(){
-	var me = this,
-		addGadget = document.getElementById("addGadget"),
-		widgetDialog = WidgetDialog;
-		widgetManager = WidgetManager;
-	widgetManager.init();
-	addGadget.onclick = function(){
-		widgetDialog.renderOverlay();
-	}
+	var me = this;
+	(WidgetManager).init();
+	$('#addGadget').click(function(){
+		(WidgetDialog).renderOverlay();
+	});
 }

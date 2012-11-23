@@ -47,37 +47,31 @@ WidgetPrototype.addMenuItems = function(){
 WidgetPrototype.minimize = function() {
 	$('.body',this.el).css('display',"None");
 	$('.window',this.el).css('minHeight','40px');
-	$('.window-minimize',this.el).addClass('window-maximize');	
+	$('.window-minimize',this.el).attr('class','window-maximize');
 };
 
 WidgetPrototype.maximize = function() {
-	var contentWindow = getElementsByClassName(this.el, 'window')[0],
-		maximizeButton = getElementsByClassName(this.el,'window-maximize')[0],
-		WidgetBody =getElementsByClassName(this.el, 'body')[0];
-	WidgetBody.style.display = "block";
-	contentWindow.style.minHeight = "220px";
-	maximizeButton.className = 'window-minimize';
+	$('.body',this.el).css('display',"block");
+	$('.window',this.el).css('minHeight','220px');
+	$('.window-maximize',this.el).attr('class','window-minimize');
 };
 
 WidgetPrototype.close = function(){
-	this.parent.removeChild(this.el);
+	$(this.el).remove();
 	this.widgetManager.removeWidget(this);
 };
 WidgetPrototype.attachEventHandlers = function(){
-	var minimizeButton = getElementsByClassName(this.el,'window-minimize')[0],
-		closeButton = getElementsByClassName(this.el,'window-close')[0],
-		me = this;
-	minimizeButton.onclick = function(){
-		if(this.className == 'window-minimize')	
-		{	
+	var me = this;
+	$('.window-minimize',this.el).click(function(){
+		if(this.className == 'window-minimize'){	
 			me.minimize();
 			return false;
 		}
  		me.maximize();
 		return false;
-	};
-	closeButton.onclick = function(){
+	});
+	$('.window-close',this.el).click(function(){
 		me.close();
 		return false;
-	};
+	});
 };
