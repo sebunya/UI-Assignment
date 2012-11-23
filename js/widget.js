@@ -1,6 +1,6 @@
 var Widget = function(data){
 	this.data = data;
-	this.parent = document.getElementById(this.data.columnElement);
+	this.parent = $("#"+this.data.columnElement)[0];
 	this.el;
 	this.template = this.templates.getWidgetTemplate()
 	this.widgetManager = WidgetManager,
@@ -8,16 +8,7 @@ var Widget = function(data){
 }
 Widget.prototype = new Dialog;
 var WidgetPrototype = Widget.prototype;
-WidgetPrototype.addMenuItems = function(){
-	var parent = arguments[0],
-		listElement;
-	for(var i=1;i<arguments.length;i++){
-		listElement = document.createElement("li");
-		listElement.innerHTML = arguments[i];
-		parent.appendChild(listElement);
-	}
-	return false;
-};
+
 WidgetPrototype.addNewWidget = function(){
 	var data = {
 				VShadowClass: 'V-shadow',
@@ -45,13 +36,18 @@ WidgetPrototype.addNewWidget = function(){
 	this.attachEventHandlers();
 };
 
+WidgetPrototype.addMenuItems = function(){
+	var parent = arguments[0];
+	for(var i=1;i<arguments.length;i++){
+		$(parent).append("<li>" + arguments[i] + "</li>")
+	}
+	return false;
+};
+
 WidgetPrototype.minimize = function() {
-	var contentWindow = getElementsByClassName(this.el, 'window')[0],
-		minimizeButton = getElementsByClassName(this.el,'window-minimize')[0],
-		WidgetBody =getElementsByClassName(this.el, 'body')[0];
-	WidgetBody.style.display = "None";
-	contentWindow.style.minHeight = "40px";
-	minimizeButton.className = 'window-maximize';	
+	$('.body',this.el).css('display',"None");
+	$('.window',this.el).css('minHeight','40px');
+	$('.window-minimize',this.el).addClass('window-maximize');	
 };
 
 WidgetPrototype.maximize = function() {
