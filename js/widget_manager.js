@@ -5,7 +5,10 @@ var WidgetManager = (function(){
 			var allWidgets = [],
 				templates = new Template(),
 				thisTemplate = templates.getGlobalWidgetButtonTemplate(),
-				me = this,
+				bindEvents = function(me){
+					$(me).bind('read_cookies',readCookie);
+					$(me).bind('write_cookie',writeCookie);
+				},
 				attachGlobalWidgetHandlers = function(){
 					$('.minimize-all','.all-widgets-buttons').click(function(){
 						for(var i=0,len = allWidgets.length;i<len;i++){
@@ -76,7 +79,7 @@ var WidgetManager = (function(){
 					},
 					add: function(widget){
 						allWidgets.push(widget);
-						writeCookie("widgets",makeJsonString());
+						$(this).triggerHandler('write_cookie',{'cookieName':'widgets','cookieContent':makeJsonString()});
 					},
 					removeWidget: function(widget){
 						for(var i=0,len=allWidgets.length;i<len;i++){
@@ -87,10 +90,12 @@ var WidgetManager = (function(){
 						if(allWidgets.length == 0){
 							removeGlobalWidgetButtons();
 						}
-						writeCookie("widgets",makeJsonString());
+						$(this).triggerHandler('write_cookie',{'cookieName':'widgets','cookieContent':makeJsonString()});
 					},
 					init: function(){
-						var cookieContent = unescape(readCookie("widgets"));
+						bindEvents(this);
+						// var cookieContent = unescape(readCookie("widgets"));
+						var cookieContent = unescape($(this).triggerHandler('read_cookies',{'cookieName':'widgets'}));
 						if(cookieContent){
 							this.showGlobalWidgetButtons();
 							var widgets = jQuery.parseJSON(cookieContent);

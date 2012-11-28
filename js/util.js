@@ -1,15 +1,14 @@
-writeCookie = function(cookieName,cookieContent){
-	document.cookie = escape(cookieName) + "=" + escape(cookieContent);
+writeCookie = function(event,data){
+	document.cookie = escape(data.cookieName) + "=" + escape(data.cookieContent);
 };
 
-readCookie = function(cookieName){
+readCookie = function(event,data){
 	var allCookies = document.cookie,
 		cookieArray = allCookies.split(";"),
-		cookieName,
-		cookieValue;
+		cookieValue,cookieName;
 	for(var i=0,len=cookieArray.length;i<len;i++){
 		cookieName = cookieArray[i].split('=')[0];
-		if(cookieName.match(cookieName)==null){
+		if(cookieName.match(data.cookieName)==null){
 			continue;
 		}
 		cookieValue = cookieArray[i].split('=')[1];
